@@ -1,0 +1,40 @@
+@font-face {
+    font-family: "Archer";
+    src: url("fonts/Archer-Bold.otf");
+}
+@font-face {
+    font-family: "Archer";
+    src: url("fonts/Archer-Bold.otf");
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Archer";
+    src: url("fonts/Archer-BookItal.otf");
+    font-style: italic;
+}
+@font-face {
+    font-family: "Archer";
+    src: url("fonts/Archer-BoldItal.otf");
+    font-weight: bold;
+    font-style: italic;
+}
+
+h1 {
+  font-family: "Archer";
+}
+h2 {
+  font-family: "Archer";
+}
+h3 {
+  font-family: "Archer";
+}
+h4 {
+  font-family: "Archer";
+}
+h5 {
+  font-family: "Archer";
+}
+
+.archer {
+  font-family: "Archer";
+}
