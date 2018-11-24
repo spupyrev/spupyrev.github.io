@@ -1,0 +1,391 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Linear Graph Layouts</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+		<meta name="title" content="Linear Graph Layouts">
+		<meta name="keywords" content="graph layout, book embedding, stack number, queue number, track number, upper bound, lower bound, bibliography">
+
+		<link type="image/ico" rel="shortcut icon" href="static/img/favicon.ico" />
+    <link href="static/css/bootstrap.css" rel="stylesheet">
+
+		<script type="text/javascript">
+			window.onload = function() {
+				// modify all references
+				var divs = document.getElementsByTagName("span");
+				for(var i = 0; i < divs.length; i++) {
+					var html = divs[i].innerHTML;
+					if (html.startsWith("gen-")) {
+						var id = html.substring(4);
+						var child_element  = document.getElementById(id);
+						if (child_element === null) {
+							divs[i].innerHTML = "broken_link";
+							continue;
+						}
+						var parent_element = child_element.parentNode;
+						var idx = Array.prototype.indexOf.call(parent_element.children, child_element) + 1;
+						divs[i].innerHTML = "<a href='#" + id + "'>[" + idx + "]</a>";
+					}
+				}				
+			};		
+		</script>
+
+</head>
+
+<body style="margin:0;padding-left:50px;padding-right:50px">
+
+	<div class="description">
+		<h2 style="text-align:center">
+			<span>Overview</span>
+		</h2>
+		<p>
+		In a total order of the vertices of a graph, two edges with no endpoint in common can be crossing, nested, or disjoint.
+		A k-stack (respectively, k-queue) layout of a graph consists of a total order of the vertices, and a partition of
+		the edges into k sets of pairwise non-crossing (respectively, non-nested) edges. Motivated by 
+		<a href="#ref-DW04">numerous applications</a>, stack layouts (also called book embeddings) and queue layouts are widely studied in the literature. 
+		We survey existing results regarding upper and lower bounds on <a href="#stack">stack number</a>, <a href="#queue">queue number</a> and <a href="#track">track number</a>
+		of various classes of graphs.
+
+		<figure>
+			<img src="static/img/octo.png" width="100%"/>
+			<figcaption>The octahedron graph drawn in (left) 2 stacks, (center) 2 queues, and (right) 3 tracks</figcaption>
+		</figure>
+
+		<br/>
+		<h2>
+			<span id="stack">Stack number</span>
+		</h2>
+
+		<p>
+		A <a href="https://en.wikipedia.org/wiki/Book_embedding">book embedding</a> is an embedding of a graph to a collection of 
+		books, that is, half-planes having the same line as their boundary. The vertices of the graph lie on this boundary line, 
+		called the spine, and the edges stay within a single half-plane. The book thickness of a graph is the smallest possible 
+		number of half-planes for any book embedding of the graph. <b>Book thickness</b> is also called <b>page number</b>, 
+		<b>stack number</b> or <b>fixed outerthickness</b>. Stack layouts were introduced by <a href="#ref-O73">Ollmann</a> in 1973.
+		</p>
+
+		<table class="bounds">
+  		<tr>
+    		<th>graph class</th>
+		    <th>lower bound</th> 
+		    <th>reference</th> 
+		    <th>upper bound</th> 
+		    <th>reference</th>
+		  </tr>
+  		<tr>
+  			<td>tree</td>
+  			<td>1</td>
+  			<td><span>gen-ref-BK79</span></td>
+  			<td>1</td>
+  			<td><span>gen-ref-BK79</span></td>
+  		</tr>
+  		<tr>
+  			<td>outerplanar</td>
+  			<td>1</td>
+  			<td><span>gen-ref-BK79</span></td>
+  			<td>1</td>
+  			<td><span>gen-ref-BK79</span></td>
+  		</tr>
+  		<tr>
+  			<td>series-parallel</td>
+  			<td>2</td>
+  			<td><span>gen-ref-RM95</span></td>
+  			<td>2</td>
+  			<td><span>gen-ref-RM95</span></td>
+  		</tr>
+  		<tr>
+  			<td>planar 3-tree</td>
+  			<td>3</td>
+  			<td><span>gen-ref-H84</span></td>
+  			<td>3</td>
+  			<td><span>gen-ref-H84</span></td>
+  		</tr>
+  		<tr>
+  			<td>Halin</td>
+  			<td>2</td>
+  			<td>[?]</td>
+  			<td>2</td>
+  			<td><span>gen-ref-G95</span></td>
+  		</tr>
+  		<tr>
+  			<td>planar Laman</td>
+  			<td>3</td>
+  			<td><a href="static/graphs/laman_no_2pages.dot">[dot]</a></td>
+  			<td>4</td>
+  			<td><span>gen-ref-Y89</span></td>
+  		</tr>
+  		<tr>
+  			<td>planar bipartite</td>
+  			<td>2</td>
+  			<td>[?]</td>
+  			<td>2</td>
+  			<td><span>gen-ref-FMP95</span> <span>gen-ref-O98</span></td>  			
+  		</tr>
+  		<tr>
+  			<td>planar max-degree &le; 4</td>
+  			<td>2</td>
+  			<td>[?]</td>
+  			<td>2</td>
+  			<td><span>gen-ref-BGR16</span> <span>gen-ref-G73</span></td>
+  		</tr>
+  		<tr>
+  			<td>planar max-degree &ge; 7</td>
+  			<td>3</td>
+  			<td><a href="static/graphs/deg7_non_hamiltonian.dot">[dot]</a> <a href="static/graphs/deg7_non_hamiltonian.png">[img]</a></td>
+  			<td>4</td>
+  			<td><span>gen-ref-Y89</span></td>
+  		</tr>
+  		<tr>
+  			<td>planar</td>
+  			<td>3</td>
+  			<td><a href="static/graphs/goldner_harary.dot">[dot]</a></td>
+  			<td>4</td>
+  			<td><span>gen-ref-Y89</span></td>
+  		</tr>
+  		<tr>
+  			<td>1-planar</td>
+  			<td>4</td>
+  			<td><span>gen-ref-ABK15</span></td>
+  			<td>16</td>
+  			<td><span>gen-ref-ABK15</span></td>
+  		</tr>
+  		<tr>
+  			<td>treewidth k</td>
+  			<td>k + 1</td>
+  			<td><span>gen-ref-VDG09</span></td>
+  			<td>k + 1</td>
+  			<td><span>gen-ref-GH01</span></td>
+  		</tr>
+		</table>
+
+		<br/>
+		<h2>
+			<span id="queue">Queue number</span>
+		</h2>
+
+		<p>
+		In a <a href="https://en.wikipedia.org/wiki/Queue_number">queue layout</a>, the vertices of a graph are restricted to a line and the
+		edges are drawn at different half-planes delimited by this line, called queues.
+		The task is to find a linear order of the vertices along the underlying line and
+		a corresponding assignment of the edges of the graph to the queues, so that no
+		two independent edges of the same queues are nested. The queue
+		number of a graph is the smallest number of queues that are required by any
+		queue layout of the graph. Queue layouts were defined by <a href="#ref-HR92">Heath and Rosenberg</a> in 1992.
+		</p>
+
+		<table class="bounds">
+  		<tr>
+    		<th>graph class</th>
+		    <th>lower bound</th> 
+		    <th>reference</th> 
+		    <th>upper bound</th> 
+		    <th>reference</th>
+		  </tr>
+  		<tr>
+  			<td>tree</td>
+  			<td>1</td>
+  			<td><span>gen-ref-HR92</span></td>
+  			<td>1</td>
+  			<td><span>gen-ref-HR92</span></td>
+  		</tr>
+  		<tr>
+  			<td>outerplanar</td>
+  			<td>2</td>
+  			<td><span>gen-ref-HR92</span></td>
+  			<td>2</td>
+  			<td><span>gen-ref-HLR92</span></td>
+  		</tr>
+  		<tr>
+  			<td>series-parallel</td>
+  			<td>3</td>
+  			<td><span>gen-ref-W17</span></td>
+  			<td>3</td>
+  			<td><span>gen-ref-RM95</span></td>
+  		</tr>
+  		<tr>
+  			<td>planar 3-tree</td>
+  			<td>4</td>
+  			<td><span>gen-ref-ABGKP18</span></td>
+  			<td>5</td>
+  			<td><span>gen-ref-ABGKP18</span></td>
+  		</tr>
+  		<tr>
+  			<td>Halin</td>
+  			<td>2</td>
+  			<td><span>gen-ref-G95</span></td>
+  			<td>2</td>
+  			<td><span>gen-ref-BDDEW18</span></td>
+  		</tr>
+  		<tr>
+  			<td>planar</td>
+  			<td>4</td>
+  			<td><span>gen-ref-ABGKP18</span></td>
+  			<td>O(log n)</td>
+  			<td><span>gen-ref-D15</span> <span>gen-ref-BDDEW18</span></td>
+  		</tr>
+  		<tr>
+  			<td>treewidth k</td>
+  			<td>k + 1</td>
+  			<td><span>gen-ref-W17</span></td>
+  			<td>2<sup>k</sup> - 1</td>
+  			<td><span>gen-ref-W17</span></td>
+  		</tr>
+		</table>
+
+		<br/>
+		<h2>
+			<span id="track">Track number</span>
+		</h2>
+
+		<p>
+		A track layout of a graph is a partition of its vertices into sequences, called tracks, such
+		that the vertices in each sequence form an independent set and the edges between each
+		two pairs of tracks form a non-crossing set. 
+		Track layouts were introduced by <a href="ref-DMW05">Dujmovi&#263; et al.</a>, although similar structures are implicit
+		in several previous works studying low-volume three-dimensional graph drawings.
+		</p>
+
+		<table class="bounds">
+  		<tr>
+    		<th>graph class</th>
+		    <th>lower bound</th> 
+		    <th>reference</th> 
+		    <th>upper bound</th> 
+		    <th>reference</th>
+		  </tr>
+  		<tr>
+  			<td>tree</td>
+  			<td>3</td>
+  			<td><span>gen-ref-FLW06</span></td>
+  			<td>3</td>
+  			<td><span>gen-ref-FLW06</span></td>
+  		</tr>
+  		<tr>
+  			<td>outerplanar</td>
+  			<td>5</td>
+  			<td>[?]</td>
+  			<td>5</td>
+  			<td><span>gen-ref-DPW04</span></td>
+  		</tr>
+  		<tr>
+  			<td>series-parallel</td>
+  			<td>6</td>
+  			<td><span>gen-ref-DMW05</span></td>
+  			<td>15</td>
+  			<td><span>gen-ref-GLM03</span></td>
+  		</tr>
+  		<tr>
+  			<td>planar 3-tree</td>
+  			<td>8</td>
+  			<td>[?]</td>
+  			<td>4000</td>
+  			<td><span>gen-ref-ABGKP18</span></td>
+  		</tr>
+  		<tr>
+  			<td>Halin</td>
+  			<td>5</td>
+  			<td>[?]</td>
+  			<td>6</td>
+  			<td><span>gen-ref-BDDEW18</span></td>
+  		</tr>
+  		<tr>
+  			<td>X-Tree</td>
+  			<td>5</td>
+  			<td>[?]</td>
+  			<td>6</td>
+  			<td><span>gen-ref-GM03</span></td>
+  		</tr>
+  		<tr>
+  			<td>planar</td>
+  			<td>8</td>
+  			<td>[?]</td>
+  			<td>O(log n)</td>
+  			<td><span>gen-ref-D15</span> <span>gen-ref-BDDEW18</span></td>
+  		</tr>
+  		<tr>
+  			<td>treewidth k</td>
+  			<td>1&frasl;2 (k + 1)(k + 2)</td>
+  			<td><span>gen-ref-DMW05</span></td>
+  			<td>(k + 1)(2<sup>k+1</sup>-2)<sup>k</sup></td>
+  			<td><span>gen-ref-W17</span></td>
+  		</tr>
+		</table>
+
+		<!--
+		<br/>
+		<h2>
+			<span id="misc">Misc</span>
+		</h2>
+		-->
+
+		<br/>
+		<h2>
+			<span id="refs">References</span>
+		</h2>
+
+		<div>
+		<ol class="references">
+			<li id="ref-bob"><a href="http://be.cs.arizona.edu">An online solver for stack and queue numbers of graphs.</a></li>
+			<li id="ref-O73">
+				L. T. Ollmann. On the book thicknesses of various graphs. In 4th Southeastern Conference on Combinatorics. Graph Theory and
+				Computing, vol. VIII of Congressus Numerantium, p. 459, 1973.</li>
+			<li id="ref-G73">
+				E. G&uuml;nter. Hamiltonian circuits in simplicial complexes. Geometriae Dedicata 2.1: 115-125, 1973.</li>
+			<li id="ref-BK79">
+				F. Bernhart and P. C. Kainen. The book thickness of a graph. Journal of Combinatorial Theory, Series B, 27(3):320-331, 1979.</li>
+			<li id="ref-H84">
+				L. Heath. Embedding planar graphs in seven pages. In 25th Annual Symposium on Foundations of Computer Science, pages 74-83. IEEE, 1984.</li>
+			<li id="ref-Y89">
+				M. Yannakakis. Embedding planar graphs in four pages. Journal of Computer and System Sciences, 38(1):36-67, 1989.</li>
+			<li id="ref-HR92">
+				L. S. Heath and A. L. Rosenberg. Laying out graphs using queues. SIAM Journal on Computing, 21(5):927-958, 1992.</li>
+			<li id="ref-HLR92">
+				L. S. Heath, F. T. Leighton, and A. L. Rosenberg. Comparing queues and stacks as machines for laying out graphs. 
+				SIAM Journal on Discrete Mathematics, 5(3):398-412, 1992.</li>
+			<li id="ref-RM95">
+				S. Rengarajan and C. V. Madhavan. Stack and queue number of 2-trees. In International Computing and Combinatorics Conference, 
+				pages 203-212. Springer, 1995.</li>
+			<li id="ref-FMP95">
+				H. De Fraysseix, P. O. De Mendez, and J. Pach. A left-first search algorithm for planar graphs. 
+				Discrete & Computational Geometry, 13(3-4):459-468, 1995.</li>
+			<li id="ref-G95">
+				J. L. Ganley. Stack and queue layouts of Halin graphs. manuscript, 1995.</li>
+			<li id="ref-O98">
+				S. B. Overbay. Generalized book embeddings. PhD thesis, Colorado State University, 1998.</li>
+			<li id="ref-GH01">
+				J. L. Ganley and L. S. Heath. The pagenumber of k-trees is O(k). Discrete Applied Mathematics, 109(3):215-221, 2001.</li>
+			<li id="ref-GLM03">
+				E. Di Giacomo, G. Liotta, and H. Meijer. 3d straight-line drawings of k-trees. Technical report, 2003-473, School of Computing, Queens's University, Kingston, Canada, 2003.</li>
+			<li id="ref-GM03">
+				E. Di Giacomo and H. Meijer. Track drawings of graphs with constant queue number. In International Symposium on Graph Drawing, pages 214-225. Springer, 2003.</li>
+			<li id="ref-DW04">
+				V. Dujmovi&#263; and D. R. Wood. On linear layouts of graphs. Discrete Mathematics & Theoretical Computer Science, 6(2):339-358, 2004.</li>
+			<li id="ref-DPW04">
+				V. Dujmovi&#263;, A. P&oacute;r, and D. R. Wood. Track layouts of graphs. Discrete Mathematics & Theoretical Computer Science, 6(2):497-522, 2004.</li>
+			<li id="ref-DMW05">
+				V. Dujmovi&#263;, P. Morin, and D. R. Wood. Layout of graphs with bounded tree-width. SIAM Journal on Computing 34.3: 553-579, 2005.</li>
+			<li id="ref-FLW06">
+				S. Felsmer, G. Liotta, and S. Wismath. Straight-line drawings on restricted integer grids in two and three dimensions. 
+				Graph Algorithms and Applications 4, 4:363-398, 2006.</li>
+			<li id="ref-VDG09">
+				J. Vandenbussche, W. B. Douglas and Y. Gexin. On the pagenumber of k-trees. SIAM Journal on Discrete Mathematics 23.3: 1455-1464, 2009.</li>
+			<li id="ref-D15">
+				V. Dujmovi&#263;. Graph layouts via layered separators. Journal of Combinatorial Theory, Series B, 110:79-89, 2015.</li>
+			<li id="ref-ABK15">
+				M. Alam, F. J. Brandenburg, and S. G. Kobourov. On the book thickness of 1-planar graphs. arXiv preprint arXiv:1510.05891, 2015.</li>
+			<li id="ref-BGR16">
+				M. A. Bekos, M. Gronemann, and C. N. Raftopoulou. Two-page book embeddings of 4-planar graphs. Algorithmica, 75(1):158-185, 2016.</li>
+			<li id="ref-W17">
+				V. Wiechert. On the queue-number of graphs with bounded tree-width. Electr. J. Comb. 24(1), P1.65, 2017.</li>
+			<li id="ref-BDDEW18">
+				M. J. Bannister, W. E. Devanny, V. Dujmovi&#263;, D. Eppstein, D. R. Wood. Track layouts, layered path decompositions, and leveled planarity.
+				Algorithmica, pp 1-23, 2018.
+			<li id="ref-ABGKP18">
+				J. Alam, M. A. Bekos, M. Gronemann, M. Kaufmann, and S. Pupyrev. Queue Layouts of Planar 3-Trees. 
+				 Proceedings of the 26th International Symposium on Graph Drawing and Network Visualization, 2018.</li>
+		</ol>
+		</div>
+
+</body>
