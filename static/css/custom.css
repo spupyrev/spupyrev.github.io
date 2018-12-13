@@ -3,6 +3,11 @@ body {
   font-size: 14px;
 }
 
+.img-about {
+    max-height: 191px;
+    border-radius: 50%;
+}
+
 .table .thead-dark th {
     text-align: left;
     background-color: #4CAF50;
@@ -11,15 +16,19 @@ body {
     padding: 8px;
     text-align: center;
 }
-.table th:first-child {text-align: left;}
-.table td {
+.table-fancy th:first-child {text-align: left;}
+.table-fancy td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: center;
 }
-.table td:first-child {text-align: left;}
-.table tr:nth-child(odd){background-color: #f2f2f2;}
-.table tr:hover {background-color: #ddd;}
+.table-fancy td:first-child {text-align: left;}
+.table-fancy tr:nth-child(odd){background-color: #f2f2f2;}
+.table-fancy tr:hover {background-color: #ddd;}
+
+.borderless td, .borderless th {
+    border: none;
+}
 
 h1,h2,h3,h4,h5,h6 {
   padding-top:0.5em;
@@ -66,4 +75,23 @@ figure img {
 }
 figure figcaption {
     text-align: center;
+}
+
+.span-date {
+  color: #777777;
+}
+
+.field {
+  color: #1a0dab;
+  margin-right: 16px;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }
