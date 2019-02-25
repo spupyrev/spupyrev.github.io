@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Open Problmes</title>
+    <meta name="title" content="Open Problmes">
+    <meta name="keywords" content="graph, open problems">
+
+    <link type="image/ico" rel="shortcut icon" href="static/img/favicon.ico" />
+    <link href="static/css/bootstrap.css" rel="stylesheet">
+    <link href="static/css/custom.css" rel="stylesheet">
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+</head>
+
+<body>
+<main role="main" class="container">
+
+<h3>
+  <span id="linear">Linear Graph Layouts</span>
+</h3>
+
+<p class="text-justify">
+In a total order of the vertices of a graph, two edges with no endpoint in common can be crossing, nested, or disjoint.
+A k-stack (respectively, k-queue) layout of a graph consists of a total order of the vertices, and a partition of
+the edges into k sets of pairwise non-crossing (respectively, non-nested) edges. This <a href="https://spupyrev.github.io/linearlayouts.html">page<a>
+contains a detailed overview of open problems in the field. My favourite ones are as follows:
+
+<ul class="bullets">
+  <li>Is the queue number of planar graphs bounded by a constant?</li>
+
+  <li>Is the maximum stack number of a planar graph three or four?</li>
+
+  <li>Is the queue number of graphs with treewidth k bounded by O(poly(k))? The known upper bound is 2<sup>k</sup> - 1 and lower bound is k + 1.</li>
+
+  <li>Prove/disprove the conjecture of Heath and Pemmaraju (1997) that the queue number of width-w posets is at most w. See <a href="https://dccg.upc.edu/gd2018/wp-content/uploads/2018/11/s4t2.pdf">[1]</a>.</li>
+
+  <li>Do k-planar graphs (\(k \ge 2)\) have bounded stack number? This is known for 1-planar graphs, and and the best current uuper bound is \(O(\log n)\).</li>
+
+  <li>What is the complexity of recognizing mixed (stack+queue) linear layouts? Does every 2-tree or every bipartite planar graph admit a mixed layout? See <a href="https://gd2017.ccis.northeastern.edu/files/session-05/pupyrev-mixed.pdf">[2]</a>.</li>
+</ul>
+
+
+
+<h3>
+  <span id="exttsp">Extended Travelling Salesman Problem</span>
+</h3>
+
+<p class="text-justify">
+  Let G = (V, E, w) be a directed weighted graph where an edge (s, t) ∈ E has a weight, w(s, t) > 0. The goal is to find an ordering of V, \(π : \{1, \dots, |V|\} \rightarrow V\), so as to <em>maximize</em>
+  the following expression, called ExtTSP:
+  $$
+  ExtTSP = \sum_{(s, t) \in E} 
+  w(s, t) \times 
+  \begin{cases}
+    k_f\big(π(t) - π(s)\big) & \text{if } π(s) \le π(t)\\
+    k_b\big(π(s) - π(t)\big) & \text{if } π(s) > π(t)\\
+  \end{cases}
+  $$
+where the summation is taken over all edges of G and \(k_f, k_b: [0, |V|) \rightarrow \mathbb{R}\) are distance coefficients for forward and backward edges, respectively. Notice that the classical (maximum) Travelling Salesman Problem is an instance of ExtTSP when \(k_f(1) = 1\) and \(k_b(i) = 0\) for all \(i\).
+We assume that both \(k_f\) and \(k_b\) are decreasing functions, that is, short edges are more important for the objective than the long ones.
+We are particularly interested in the case when \(k_f(i) = k_b(i) = 0\) for all \(i \ge C\) for some constant \(C > 0\).
+See <a href="https://arxiv.org/pdf/1809.04676.pdf">[3]</a> for a practical instance of ExtTSP in the context of compiler optimization.
+
+
+<ul class="bullets">
+  <li>Is there a (constant-factor) approximation algorithm or PTAS for the problem?</li>
+
+  <li>Can the above problem be solved optimally on control flow graphs (e.g., having small treewidth)?</li>
+</ul>
+
+
+<h3>
+  <span id="minloga">Minimum Linear Logarithmic Arrangement</span>
+</h3>
+
+<p class="text-justify">
+A linear layout of a graph \(G = (V, E)\) with \(n = |V|\) vertices is a bijection \(π : V → \{1, . . . , n\}\). In practice it is desirable that “similar”
+vertices of the graph are “close” in \(π\). In the context of index compression, the following problem is defined:
+$$
+  \min \sum_{(u, v) \in E} 
+  \log|\pi(u) - \pi(v)|
+$$
+
+It is known that the problem is NP-hard, see <a href="https://www.kdd.org/kdd2016/papers/files/rpp0883-dhulipalaAemb.pdf">[4]</a>, but a number of questions remain open:
+
+<ul class="bullets">
+  <li>Is there a (constant-factor) approximation algorithm for the problem?</li>
+
+  <li>Can the above problem be solved optimally for certain classes of graphs (e.g., trees or planar graphs)?</li>
+</ul>
+
+<h3>
+  <span id="ncest">Non-Crossing Euclidean Steiner Trees</span>
+</h3>
+
+<h3>
+  <span id="tangles">Tangles</span>
+</h3>
+
+<h3>
+  <span id="bundles">Bundle Crossings</span>
+</h3>
+
+<h3>
+  <span id="threshold">Threshold Coloring</span>
+</h3>
+
+
+<h3>
+  <span id="ppgd">Practical Planar Graph Drawing</span>
+</h3>
+
+<h3>
+  <span id="vgce">Visual Graph Clustering Evaluation</span>
+</h3>
+
+</main>
+</body>
+</html>
