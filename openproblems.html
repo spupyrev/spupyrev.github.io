@@ -21,6 +21,15 @@
 <body>
 <main role="main" class="container">
 
+<h6>Contents</h6>
+<ol type="1">
+  <li><a href="#linear">Linear Graph Layouts</a></li>
+  <li><a href="#exttsp">Extended Travelling Salesman Problem</a></li>
+  <li><a href="#minloga">Minimum Linear Logarithmic Arrangement</a></li>
+  <li><a href="#ncest">Non-Crossing Euclidean Steiner Forest</a></li>
+  <li><a href="#tangles">Tangles</a></li>
+</ol>
+
 <h3>
   <span id="linear">Linear Graph Layouts</span>
 </h3>
@@ -28,8 +37,9 @@
 <p class="text-justify">
 In a total order of the vertices of a graph, two edges with no endpoint in common can be crossing, nested, or disjoint.
 A k-stack (respectively, k-queue) layout of a graph consists of a total order of the vertices, and a partition of
-the edges into k sets of pairwise non-crossing (respectively, non-nested) edges. This <a href="https://spupyrev.github.io/linearlayouts.html">page<a>
+the edges into k sets of pairwise non-crossing (respectively, non-nested) edges. This <a href="https://spupyrev.github.io/linearlayouts.html">page</a>
 contains a detailed overview of open problems in the field. My favourite ones are as follows:
+</p>
 
 <ul class="bullets">
   <li>Is the queue number of planar graphs bounded by a constant?</li>
@@ -66,7 +76,7 @@ where the summation is taken over all edges of G and \(k_f, k_b: [0, |V|) \right
 We assume that both \(k_f\) and \(k_b\) are decreasing functions, that is, short edges are more important for the objective than the long ones.
 We are particularly interested in the case when \(k_f(i) = k_b(i) = 0\) for all \(i \ge C\) for some constant \(C > 0\).
 See <a href="https://arxiv.org/pdf/1809.04676.pdf">[3]</a> for a practical instance of ExtTSP in the context of compiler optimization.
-
+</p>
 
 <ul class="bullets">
   <li>Is there a (constant-factor) approximation algorithm or PTAS for the problem?</li>
@@ -86,6 +96,7 @@ $$
   \min \sum_{(u, v) \in E} 
   \log|\pi(u) - \pi(v)|
 $$
+</p>
 
 It is known that the problem is NP-hard, see <a href="https://www.kdd.org/kdd2016/papers/files/rpp0883-dhulipalaAemb.pdf">[4]</a>, but a number of questions remain open:
 
@@ -96,12 +107,63 @@ It is known that the problem is NP-hard, see <a href="https://www.kdd.org/kdd201
 </ul>
 
 <h3>
-  <span id="ncest">Non-Crossing Euclidean Steiner Trees</span>
+  <span id="ncest">Non-Crossing Euclidean Steiner Forest</span>
 </h3>
+
+<p class="text-justify">
+Given a set of k-colored points in the plane, we consider the problem of finding
+k trees such that each tree connects all points of one color class, no two trees cross,
+and the total edge length of the trees is minimized. For k = 1, this is the well-known
+Euclidean Steiner tree problem. For general k, two approximation algorithms with ratios
+\(O(\sqrt{n} \log k)\) and \(k + \epsilon\) are known, while for k = 2, there exists a PTAS;
+see <a href="https://arxiv.org/pdf/1509.05681.pdf">[5]</a>.
+</p>
+
+<figure style="text-align: center;">
+  <img src="static/img/ncest.png" width="50%"/>
+</figure>
+
+<ul class="bullets">
+  <li>Is there a better (e.g., constant-factor) approximation algorithm for k > 3?</li>
+
+  <li>Is the problem APX-hard for large k?</li>
+
+  <li>Study an ``anchored'' version of the problem in which the only allowed
+  Steiner points are input points of a different color.</li>
+
+  <li>Find non-crossing tour of shortest length on a given ordered set of points.</li>
+</ul>
+
 
 <h3>
   <span id="tangles">Tangles</span>
 </h3>
+<p class="text-justify">
+A permutation may be represented by a collection of paths in the plane. We
+consider a natural class of such representations, which we call tangles, in which the paths
+consist of straight segments at 45 degree angles, and the permutation is decomposed into
+nearest-neighbour transpositions. We address the problem of minimizing the number of
+crossings together with the number of corners of the paths.
+</p>
+
+<figure style="text-align: center;">
+  <img src="static/img/tangles.png" width="50%"/>
+  <figcaption>(a) A tangle solving the permutation [3, 6, 1, 4, 7, 2, 5]. 
+  (b) A drawing of the tangle.</figcaption>
+</figure>
+<br/>
+
+Tangles have been studied in <a href="https://arxiv.org/pdf/1306.4048.pdf">[6]</a> and <a href="https://arxiv.org/pdf/1508.03674.pdf">[7]</a>. 
+A list of follow up questions:
+
+<ul class="bullets">
+  <li>What is the complexity of determining the tangle with minimum corners for a given permutation? What is the complexity for simple tangles?</li>
+
+  <li>Nice tangles with double crossings: Can one partition a permutation into 213- and 312-avoidable subpermutations?</li>
+
+  <li>What is the asymptotic behavior as \(n → ∞\) of the maximum over permutations \(π ∈ S_n\) of the minimum number of moves among simple tangles
+      that perform \(π\)? In particularly, is it \(O(n)\)? Our results show only that it is between \(3n − o(n)\) and \(O(n \log n)\).</li>
+</ul>
 
 <h3>
   <span id="bundles">Bundle Crossings</span>
