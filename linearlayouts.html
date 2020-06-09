@@ -306,6 +306,13 @@ queue layout of the graph. Queue layouts were defined by <a href="#ref-HR92">Hea
     <td><span>gen-ref-HR92</span></td>
   </tr>
   <tr>
+    <td>planar bipartite</td>
+    <td>2</td>
+    <td><a href="static/graphs/planar_bipartite_no1queue.jpg" target=”_blank”>[img]</a></td>
+    <td>31</td>
+    <td><span>gen-ref-DJMMUW19</span></td>
+  </tr>
+  <tr>
     <td>planar</td>
     <td>4</td>
     <td><span>gen-ref-ABGKP18</span></td>
@@ -313,31 +320,59 @@ queue layout of the graph. Queue layouts were defined by <a href="#ref-HR92">Hea
     <td><span>gen-ref-DJMMUW19</span></td>
   </tr>
   <tr>
-    <td>planar bipartite</td>
-    <td>2</td>
-    <td><a href="static/graphs/planar_bipartite_no1queue.jpg" target=”_blank”>[img]</a></td>
-    <td>49</td>
+    <td>genus g</td>
+    <td>4</td>
+    <td><span>gen-ref-ABGKP18</span></td>
+    <td>O(g)</td>
     <td><span>gen-ref-DJMMUW19</span></td>
+  </tr>
+  <tr>
+    <td>proper minor-closed</td>
+    <td>4</td>
+    <td><span>gen-ref-ABGKP18</span></td>
+    <td>O(1)</td>
+    <td><span>gen-ref-DJMMUW19</span></td>
+  </tr>
+  <tr>
+    <td>1-planar</td>
+    <td>4</td>
+    <td><span>gen-ref-ABGKP18</span></td>
+    <td>495</td>
+    <td><span>gen-ref-DMW20</span></td>
   </tr>
   <tr>
     <td>k-planar</td>
     <td>4</td>
     <td><span>gen-ref-ABGKP18</span></td>
     <td>O(1)</td>
-    <td><span>gen-ref-DJMMUW19</span></td>
+    <td><span>gen-ref-DJMMUW19</span> <span>gen-ref-DMW20</span></td>
   </tr>
-	<tr>
-		<td>treewidth k</td>
-		<td>k + 1</td>
-		<td><span>gen-ref-W17</span></td>
-		<td>2<sup>k</sup> - 1</td>
-		<td><span>gen-ref-W17</span></td>
-	</tr>
+  <tr>
+    <td>pathwidth k</td>
+    <td>k</td>
+    <td><span>gen-ref-W02</span></td>
+    <td>k</td>
+    <td><span>gen-ref-W02</span></td>
+  </tr>
+  <tr>
+    <td>treewidth k</td>
+    <td>k + 1</td>
+    <td><span>gen-ref-W17</span></td>
+    <td>2<sup>k</sup> - 1</td>
+    <td><span>gen-ref-W17</span></td>
+  </tr>
   <tr>
     <td>complete K<sub>n</sub></td>
     <td>&#x230A;n / 2&#x230B;</td>
     <td><span>gen-ref-HR92</span></td>
     <td>&#x230A;n / 2&#x230B;</td>
+    <td><span>gen-ref-HR92</span></td>
+  </tr>
+  <tr>
+    <td>complete bipartite K<sub>n,m</sub></td>
+    <td>min(&#x2308;n / 2&#x2309;, &#x2308;m / 2&#x2309;)</td>
+    <td><span>gen-ref-HR92</span></td>
+    <td>min(&#x2308;n / 2&#x2309;, &#x2308;m / 2&#x2309;)</td>
     <td><span>gen-ref-HR92</span></td>
   </tr>
 </tbody>
@@ -416,16 +451,16 @@ in several previous works studying low-volume three-dimensional graph drawings.
 		<td><span>gen-ref-P19</span></td>
 	</tr>
   <tr>
-    <td>planar</td>
-    <td>8</td>
-    <td><span>gen-ref-P19</span></td>
+    <td>planar bipartite</td>
+    <td>5</td>
+    <td><a href="static/graphs/planar_bipartite_5tracks.dot" target=”_blank”>[dot]</a></td>
     <td>225</td>
     <td><span>gen-ref-P19</span></td>
   </tr>
   <tr>
-    <td>planar bipartite</td>
-    <td>5</td>
-    <td><a href="static/graphs/planar_bipartite_5tracks.dot" target=”_blank”>[dot]</a></td>
+    <td>planar</td>
+    <td>8</td>
+    <td><span>gen-ref-P19</span></td>
     <td>225</td>
     <td><span>gen-ref-P19</span></td>
   </tr>
@@ -456,6 +491,9 @@ in several previous works studying low-volume three-dimensional graph drawings.
   <li id="ref-BKKPRU20">
     M. A. Bekos, M. Kaufmann, and F. Klute, S. Pupyrev, C. Raftopoulou, and T. Ueckerdt. Four Pages Are Indeed Necessary for Planar Graphs.
     arXiv preprint arXiv:2004.07630, 2020</li>
+  <li id="ref-DMW20">
+    V. Dujmovi&#263;, P. Morin, and D. Wood. Graph product structure for non-minor-closed classes.
+    arXiv preprint arXiv:1907.05168, 2020</li>
   <li id="ref-HK19">
     M. Hoffmann and B. Klemz. Triconnected Planar Graphs of Maximum Degree Five are Subhamiltonian.
     European Symposium on Algorithms (ESA), pp 58, 2019.</li>
@@ -502,6 +540,8 @@ in several previous works studying low-volume three-dimensional graph drawings.
     E. Di Giacomo and H. Meijer. Track drawings of graphs with constant queue number. In International Symposium on Graph Drawing, pages 214-225. Springer, 2003.</li>
   <li id="ref-GLM03">
     E. Di Giacomo, G. Liotta, and H. Meijer. 3d straight-line drawings of k-trees. Technical report, 2003-473, School of Computing, Queens's University, Kingston, Canada, 2003.</li>
+  <li id="ref-W02">
+    D. Wood. Queue layouts, tree-width, and three-dimensional graph drawing. In Foundations of Software Technology and Theoretical Computer Science, pages 348-359, Springer, 2002.</li>
   <li id="ref-TY02">
     M. Togasaki and K. Yamazaki. Pagenumber of pathwidth-k graphs and strong pathwidth-k graphs. Discrete Mathematics, 259(1-3):361-368, Elsevier, 2002.</li>
   <li id="ref-GH01">
