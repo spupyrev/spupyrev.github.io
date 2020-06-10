@@ -28,6 +28,7 @@
   <li><a href="#minloga">Minimum Linear Logarithmic Arrangement</a></li>
   <li><a href="#ncest">Non-Crossing Euclidean Steiner Forest</a></li>
   <li><a href="#tangles">Tangles</a></li>
+  <li><a href="#threshold">Threshold-Coloring</a></li>
 </ol>
 
 <h3>
@@ -42,17 +43,20 @@ contains a detailed overview of open problems in the field. My favourite ones ar
 </p>
 
 <ul class="bullets">
-  <li>Is the queue number of planar graphs bounded by a constant?</li>
-
-  <li>Is the maximum stack number of a planar graph three or four?</li>
+  <li>Reduce the gap between the lower bound of 4 and the upper bound of 49 for the queue number of planar graphs?</li>
 
   <li>Is the queue number of graphs with treewidth k bounded by O(poly(k))? The known upper bound is 2<sup>k</sup> - 1 and lower bound is k + 1.</li>
 
-  <li>Prove/disprove the conjecture of Heath and Pemmaraju (1997) that the queue number of width-w posets is at most w. See <a href="https://dccg.upc.edu/gd2018/wp-content/uploads/2018/11/s4t2.pdf">[1]</a>.</li>
-
   <li>Do k-planar graphs (\(k \ge 2)\) have bounded stack number? This is known for 1-planar graphs, and and the best current uuper bound is \(O(\log n)\).</li>
 
-  <li>What is the complexity of recognizing mixed (stack+queue) linear layouts? Does every 2-tree or every bipartite planar graph admit a mixed layout? See <a href="https://gd2017.ccis.northeastern.edu/files/session-05/pupyrev-mixed.pdf">[2]</a>.</li>
+  <li>Do upward planar acyclic digraphs have bounded stack number? This is known for certain families of planar graphs. 
+    See <a href="http://jgaa.info/accepted/2013/FratiFulekRuizVargas2013.17.3.pdf">[1]</a>.</li>
+
+  <li>Prove/disprove that the queue number of width-w posets is O(w). 
+    See <a href="https://dccg.upc.edu/gd2018/wp-content/uploads/2018/11/s4t2.pdf">[2]</a>.</li>
+
+  <li>What is the complexity of recognizing mixed (stack+queue) linear layouts? Does every 2-tree or every bipartite planar graph admit a mixed layout? 
+    See <a href="https://gd2017.ccis.northeastern.edu/files/session-05/pupyrev-mixed.pdf">[3]</a>.</li>
 </ul>
 
 
@@ -166,22 +170,93 @@ A list of follow up questions:
 </ul>
 
 <h3>
+  <span id="threshold">Threshold Coloring</span>
+</h3>
+
+<p class="text-justify">
+  In threshold-coloring of graphs, vertex colors represented by integers are used to describe any spanning subgraph of the given graph as
+  follows. A pair of vertices with a small difference in their colors implies that the edge
+  between them is present, while a pair of vertices with a big color difference implies
+  that the edge is absent. A graph is called total-threshold-colorable if every subgraph of a given graph can be 
+  represented by some threshold-coloring.
+</p>
+
+<figure style="text-align: center;">
+  <img src="static/img/threshold.png" width="20%"/>
+  <figcaption>A planar graph with a subgraph, H (solid edges), described by its threshold-coloring.
+    An edge belongs to H iff the difference in the colors is at most one.
+  </figcaption>
+</figure>
+<br/>
+
+Threshold-coloring have been studied in <a href="https://www.sciencedirect.com/science/article/abs/pii/S0166218X15004631">[1]</a> and <a href="https://arxiv.org/pdf/1408.6928.pdf">[2]</a>. 
+A list of follow up questions:
+
+<ul class="bullets">
+  <li>What is the maximum density of a total-threshold-colorable graph? We conjecture such a graph contains at most 2n-3 edges.</li>
+
+  <li>Is square grid total-threshold-colorable?</li>
+
+  <li>Is every planar graph total-threshold-colorable in 2D, that is, when every vertex gets a pair of colors and the difference is computed using the Euclidean 
+    distance between the corresponding pairs?</li>
+</ul>
+
+
+<h3>
   <span id="bundles">Bundle Crossings</span>
 </h3>
 
+Refer to <a href="http://jgaa.info/accepted/2015/FinkPupyrevWolff2015.19.1.pdf">[1]</a> and <a href="https://arxiv.org/pdf/1608.08161.pdf">[2]</a>. 
+
+<!--
+1. Monotone block crossings on an edge: hardness, approximations (check new papers/idea about relation between bcm/bc on an edge)
+2. Approximation of monotone block crossings on trees, general graphs
+-->
+
 <h3>
-  <span id="threshold">Threshold Coloring</span>
+  <span id="vgce">Visual Graph Clustering Comparison</span>
 </h3>
+
+<p class="text-justify">
+  Graph clustering is a problem of partitioning a graph into a collection of disjoint sets of vertices.
+  There are a many available clustering algorithms that may produce different results for the same dataset. 
+  In addition, many algorithms provide configurable parameter settings. Hence judging which clustering is the most meaningful with respect to
+  a certain interpretation of the data must be done by a human expert, which may want to compare different clusterings visually.
+  This motivates the problem of creating a technique for visual graph clustering comparison.
+  The goal is to create a visualization that simultaneously represents two distinct clusterings of a given graph (or a set of objects).
+</p>
+
+<p class="text-justify">
+One theoretical aspect of the problem has been studied in <a href="https://arxiv.org/pdf/1408.6019.pdf">[1]</a>. 
+</p>
+
+<figure style="text-align: center;">
+  <img src="static/img/clusters.png" width="50%"/>
+</figure>
 
 
 <h3>
   <span id="ppgd">Practical Planar Graph Drawing</span>
 </h3>
 
-<h3>
-  <span id="vgce">Visual Graph Clustering Evaluation</span>
-</h3>
+<p class="text-justify">
+  Given the same small/medium-sized graph, can an algorithm always produce a better drawing than a human? Despite the extensive
+  research in the field of graph drawing, the answer is no: There are fairly simple graphs for which human-made visualizations are
+  much better than automatically-generated ones. 
+  This holds even for highly structured graphs such as planar triangulations or quadrangulations.
+  Thus we consider the problem of designing and implementing a practical algorithm for drawing planar graphs open.
+</p>
+
+<figure style="text-align: center;">
+  <img src="static/img/practical_gd.png" width="100%"/>
+  <figcaption>The same planar bibartite graph drawn by 5 popular algorithms (top) and by 3 human experts (bottom).
+  </figcaption>
+</figure>
+<br/>
+
+<!--1. Visualize nicely quadrangulations, planar-3-trees, etc (simple planar almost "regular" graphs)-->
 
 </main>
 </body>
 </html>
+
