@@ -116,7 +116,7 @@
       <td>Carmel, CA</td>
     </tr>
     <tr>
-      <td>Monterey Half</td>
+      <td><a class="btn-lnk" data-toggle="popover-hover" data-img="static/races/mh17.jpg" role="button">Monterey Half</a></td>
       <td>12.11.2017</td>
       <td>13.1mi</td>
       <td>1:26:45</td>
@@ -144,7 +144,7 @@
       <td>Santa Barbara, CA</td>
     </tr>
     <tr>
-      <td>Quarry Lakes Half</td>
+      <td><a class="btn-lnk" data-toggle="popover-hover" data-img="static/races/ql16.jpg" role="button">Quarry Lakes Half</a></td>
       <td>18.12.2016</td>
       <td>13.1mi</td>
       <td>1:32:00</td>
@@ -200,14 +200,14 @@
       <td>Immenstadt, Germany</td>
     </tr>
     <tr>
-      <td>Sabino Canyon</td>
+      <td><a class="btn-lnk" data-toggle="popover-hover" data-img="static/races/sb14b.jpg" role="button">Sabino Canyon</a></td>
       <td>12.04.2014</td>
       <td>7.4mi</td>
       <td>49:41</td>
       <td>Tucson, AZ</td>
     </tr>
     <tr>
-      <td>A-Mountain</td>
+      <td><a class="btn-lnk" data-toggle="popover-hover" data-img="static/races/a13a.jpg" role="button">A-Mountain</a></td>
       <td>20.10.2013</td>
       <td>13.1mi</td>
       <td>1:36:13</td>
@@ -229,7 +229,7 @@
 $('[data-toggle="popover-hover"]').popover({
   html: true,
   trigger: 'hover',
-  placement: 'bottom',
+  placement: 'auto',
   content: function () { return '<img src="' + $(this).data('img') + '" />'; }
 });
 </script>
