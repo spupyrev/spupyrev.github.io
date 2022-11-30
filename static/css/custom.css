@@ -9,7 +9,6 @@ body {
 }
 
 .table .thead-dark th {
-    text-align: left;
     background-color: #4CAF50;
     color: white;
     border: 1px solid #ddd;
