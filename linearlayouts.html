@@ -44,12 +44,13 @@
 	<span>Overview</span>
 </h3>
 <p class="text-justify">
+<div style="color:rgba(0, 0, 0, 0.5); text-align: left">Last updated: 2023-04-05</div>
 In a total order of the vertices of a graph, two edges with no endpoint in common can be crossing, nested, or disjoint.
 A k-stack (respectively, k-queue) layout of a graph consists of a total order of the vertices, and a partition of
 the edges into k sets of pairwise non-crossing (respectively, non-nested) edges. Motivated by 
 <a href="#ref-DW04">numerous applications</a>, stack layouts (also called book embeddings) and queue layouts are widely studied in the literature. 
 We survey existing results regarding upper and lower bounds on <a href="#stack">stack number</a>, <a href="#queue">queue number</a> and <a href="#track">track number</a>
-of various classes of graphs.
+of various classes of graphs. 
 </p>
 
 <figure>
@@ -386,7 +387,7 @@ queue layout of the graph. Queue layouts were defined by <a href="#ref-HR92">Hea
 A track layout of a graph is a partition of its vertices into sequences, called tracks, such
 that the vertices in each sequence form an independent set and the edges between each
 two pairs of tracks form a non-crossing set. 
-Track layouts were introduced by <a href="ref-DMW05">Dujmovi&#263; et al.</a>, although similar structures are implicit
+Track layouts were introduced by <a href="#ref-DMW05">Dujmovi&#263; et al.</a>, although similar structures are implicit
 in several previous works studying low-volume three-dimensional graph drawings.
 </p>
 
@@ -474,11 +475,30 @@ in several previous works studying low-volume three-dimensional graph drawings.
   </tbody>
 </table>
 
-<!--
 <h3>
-	<span id="misc">Directed</span>
+  <span id="directed">Directed graphs</span>
 </h3>
--->
+
+<p class="text-justify">
+  Stack and queue layouts can be extended to directed acyclic graphs (DAGs) by requiring that the vertex order is a topological 
+  order of the DAG. It was first discussed by <a href="#ref-HPT99">Heath et al</a>. Similar layouts are studied for
+  posets (partially ordered sets), or equivalently, DAGs without transitive edges.
+  <br/><br/>
+  For <b>stack layouts of DAGs</b>, <span>gen-ref-HPT99</span> and <span>gen-ref-HP99</span> show that directed trees and unicyclic 
+  DAGs have stack numbers 1 and 2, respectively; 
+  <span>gen-ref-MS09</span> proves that N-free upward planar DAGs, which contain series-parallel digraphs, have
+  stack number 2. 
+  A study in <span>gen-ref-FFR13</span> gave several conditions under which upward planar
+  triangulations have a constant stack number: (i) maximal
+  upward planar 3-trees and (ii) planar triangulations with a bounded (directed) diameter. 
+  Later <span>gen-ref-NP21</span> and <span>gen-ref-BLMN22</span> extend the classes of DAGs that have bounded stack number.
+  A sub-linear bound on the stack number of upward planar graphs is known (<span>gen-ref-JMU22a</span>) and a (very large)
+  constant upper bound on the stack number of (non-upward) outerplanar DAGs (<span>gen-ref-JMU22b</span>).
+  For the lower bounds, there exist upward outerplanar DAGs with stack number 4, upward planar 3-tree DAGs and 
+  planar posets with stack number 5 (<span>gen-ref-NP21</span>, <span>gen-ref-JMU22a</span>), and
+  (non-upward) 2-tree DAGs with unbounded stack number (<span>gen-ref-JMU22b</span>).
+</p>
+
 
 <br/>
 <h4>
@@ -488,27 +508,40 @@ in several previous works studying low-volume three-dimensional graph drawings.
 <div>
 <ol class="references">
 	<li id="ref-bob"><a href="http://be.cs.arizona.edu">An online solver for stack and queue numbers of graphs.</a></li>
+
+  <li id="ref-JMU22b">
+    P. Jungeblut, L. Merker, and T. Ueckerdt. Directed acyclic outerplanar graphs have constant stack number.
+    arXiv preprint arXiv:2211.04732, 2022.</li>
+  <li id="ref-JMU22a">
+    P. Jungeblut, L. Merker, and T. Ueckerdt. A sublinear bound on the page number of upward planar graphs.
+    Symposium on Discrete Algorithms, pp 963-978, 2022.</li>
+  <li id="ref-BLMN22">
+    S. Bhore, G. Da Lozzo, F. Montecchiani, and M. Nöllenburg. On the upward book thickness problem: combinatorial and complexity results.
+    European Journal of Combinatorics, 2022.</li>
+  <li id="ref-NP21">
+    M Nöllenburg and S Pupyrev. On families of planar DAGs with constant stack number.
+    arXiv preprint arXiv:2107.13658, 2021.</li>
   <li id="ref-M20">
-    L. Merker. Ordered Covering Numbers.
+    L. Merker. Ordered covering numbers.
     Diss. Karlsruhe Institute of Technology, 2020.</li>
   <li id="ref-F20">
-    F. Brandenburg. Book Embeddings of k-Map Graphs.
+    F. Brandenburg. Book embeddings of k-map graphs.
     arXiv preprint arXiv:2012.06874, 2020.</li>
   <li id="ref-BLGGMR20">
     M. A. Bekos, G. D. Lozzo, S. Griesbach, M. Gronemann, F. Montecchiani, and C. Raftopoulou.
-    Book Embeddings of Nonplanar Graphs with Small Faces in Few Pages.
+    Book embeddings of nonplanar graphs with small faces in few pages.
     Symposium on Computational Geometry, pp 1-17, 2020.</li>
   <li id="ref-BKKPRU20">
-    M. A. Bekos, M. Kaufmann, and F. Klute, S. Pupyrev, C. Raftopoulou, and T. Ueckerdt. Four Pages Are Indeed Necessary for Planar Graphs.
+    M. A. Bekos, M. Kaufmann, and F. Klute, S. Pupyrev, C. Raftopoulou, and T. Ueckerdt. Four pages are indeed necessary for planar graphs.
     Journal of Computational Geometry, pp 332-353, 2020.</li>
   <li id="ref-P19">
-    S. Pupyrev. Improved Bounds for Track Numbers of Planar Graphs.
+    S. Pupyrev. Improved bounds for track numbers of planar graphs.
     Journal of Graph Algorithms and Applications, pp 323-341, 2020.</li>
   <li id="ref-DMW20">
     V. Dujmovi&#263;, P. Morin, and D. Wood. Graph product structure for non-minor-closed classes.
     arXiv preprint arXiv:1907.05168, 2020.</li>
   <li id="ref-HK19">
-    M. Hoffmann and B. Klemz. Triconnected Planar Graphs of Maximum Degree Five are Subhamiltonian.
+    M. Hoffmann and B. Klemz. Triconnected planar graphs of maximum degree five are subhamiltonian.
     European Symposium on Algorithms (ESA), pp 58, 2019.</li>
   <li id="ref-GY19">
     X. Guan and W. Yang. Embedding planar 5-graphs in three pages.
@@ -517,10 +550,10 @@ in several previous works studying low-volume three-dimensional graph drawings.
     V. Dujmovi&#263;, G. Joret, P. Micek, P. Morin, T. Ueckerdt, D. R. Wood. Planar graphs have bounded queue-number.
     Symposium on Foundations of Computer Science, pp 862-875, 2019</li>
   <li id="ref-DF18">
-    V. Dujmovi&#263; and F. Frati. Stack and queue layouts via Layered Separators.
+    V. Dujmovi&#263; and F. Frati. Stack and queue layouts via layered separators.
     Journal of Graph Algorithms and Applications, pp 89-99, 2018.</li>
   <li id="ref-ABGKP18">
-    J. Alam, M. A. Bekos, M. Gronemann, M. Kaufmann, and S. Pupyrev. Queue Layouts of Planar 3-Trees. 
+    J. Alam, M. A. Bekos, M. Gronemann, M. Kaufmann, and S. Pupyrev. Queue layouts of planar 3-trees. 
      Algorithmica, pp 1-22, 2020.</li>
   <li id="ref-BDDEW18">
     M. J. Bannister, W. E. Devanny, V. Dujmovi&#263;, D. Eppstein, D. R. Wood. Track layouts, layered path decompositions, and leveled planarity.
@@ -534,9 +567,13 @@ in several previous works studying low-volume three-dimensional graph drawings.
   <li id="ref-D15">    
     V. Dujmovi&#263;. Graph layouts via layered separators. Journal of Combinatorial Theory, Series B, 110:79-89, 2015.</li>
   <li id="ref-BKZ15">    
-    M. A. Bekos, M. Kaufmann, and C. Zielke. The book embedding problem from a SAT-solving perspective. International Symposium on Graph Drawing, pages 125-138, 2015.</li>
+    M. A. Bekos, M. Kaufmann, and C. Zielke. The book embedding problem from a SAT-solving perspective. International Symposium on Graph Drawing, pp 125-138, 2015.</li>
+  <li id="ref-FFR13">    
+    F. Frati, R. Fulek, A.J. Ruiz-Vargas. On the page number of upward planar directed acyclic graphs. Journal of Graph Algorithms and Applications, 17(3):221–244, 2013.</li>
   <li id="ref-VDG09">
     J. Vandenbussche, W. B. Douglas and Y. Gexin. On the pagenumber of k-trees. SIAM Journal on Discrete Mathematics 23.3: 1455-1464, 2009.</li>
+  <li id="ref-MS09">
+    T. Mchedlidze and A. Symvonis. Crossing-free acyclic Hamiltonian path completion for planar st-digraphs. Algorithms and Computation, pp 882-891, 2009.</li>
   <li id="ref-FLW06">
     S. Felsmer, G. Liotta, and S. Wismath. Straight-line drawings on restricted integer grids in two and three dimensions. 
     Graph Algorithms and Applications 4, 4:363-398, 2006.</li>
@@ -547,7 +584,7 @@ in several previous works studying low-volume three-dimensional graph drawings.
   <li id="ref-DW04">
     V. Dujmovi&#263; and D. R. Wood. On linear layouts of graphs. Discrete Mathematics & Theoretical Computer Science, 6(2):339-358, 2004.</li>
   <li id="ref-B03">
-    R. Blankenship. Book Embeddings of Graphs. Ph.D. thesis, Louisiana State University, 2003.</li>
+    R. Blankenship. Book embeddings of graphs. Ph.D. thesis, Louisiana State University, 2003.</li>
   <li id="ref-GM03">
     E. Di Giacomo and H. Meijer. Track drawings of graphs with constant queue number. In International Symposium on Graph Drawing, pages 214-225. Springer, 2003.</li>
   <li id="ref-GLM03">
@@ -558,6 +595,10 @@ in several previous works studying low-volume three-dimensional graph drawings.
     M. Togasaki and K. Yamazaki. Pagenumber of pathwidth-k graphs and strong pathwidth-k graphs. Discrete Mathematics, 259(1-3):361-368, Elsevier, 2002.</li>
   <li id="ref-GH01">
     J. L. Ganley and L. S. Heath. The pagenumber of k-trees is O(k). Discrete Applied Mathematics, 109(3):215-221, 2001.</li>
+  <li id="ref-HPT99">
+    L. S. Heath, S. V. Pemmaraju, and A. N. Trenk. Stack and queue layouts of directed acyclic graphs: Part I. SIAM Journal on Computing, 28(4):1510-1539, 1999.</li>
+  <li id="ref-HP99">
+    L. S. Heath and S. V. Pemmaraju. Stack and queue layouts of directed acyclic graphs: Part II. SIAM Journal on Computing, 28(5):1588-1626, 1999.</li>
   <li id="ref-O98">
     S. B. Overbay. Generalized book embeddings. PhD thesis, Colorado State University, 1998.</li>
   <li id="ref-ENO97">
