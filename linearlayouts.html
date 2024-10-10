@@ -44,7 +44,7 @@
 	<span>Overview</span>
 </h3>
 <p class="text-justify">
-<div style="color:rgba(0, 0, 0, 0.5); text-align: left">Last updated: 2024-07-08</div>
+<div style="color:rgba(0, 0, 0, 0.5); text-align: left">Last updated: 2024-10-09</div>
 In a total order of the vertices of a graph, two edges with no endpoint in common can be crossing, nested, or disjoint.
 A k-stack (respectively, k-queue) layout of a graph consists of a total order of the vertices, and a partition of
 the edges into k sets of pairwise non-crossing (respectively, non-nested) edges. Motivated by 
@@ -505,10 +505,45 @@ in several previous works studying low-volume three-dimensional graph drawings.
   For the lower bounds, there exist upward outerplanar DAGs with stack number 4, upward planar 3-tree DAGs and 
   planar posets with stack number 5 (<span>gen-ref-NP21</span>, <span>gen-ref-JMU22a</span>), and
   (non-upward) 2-tree DAGs with unbounded stack number (<span>gen-ref-JMU22b</span>).
+
+  <br/><br/>
+  <b>Queue layouts of DAGs</b> have been first studied by Heath and Pemmaraju (<span>gen-ref-HP99</span>, <span>gen-ref-HPT99</span>).
+  They characterize 1-queue DAGs as the ones admitting arched leveled-planar layouts, show that every unicyclic DAG has a 2-queue layout,
+  and consider the computational complexity of recognizing 1-queue DAGs (linear time) and 4-queue DAGs (NP-complete).
+  It is easy to verify that the queue number of directed acyclic 2-trees is unbounded (img).
+  Subsequent works focus on the queue number of posets. <span>gen-ref-HP97</span> derives upper bounds in terms of its jumpnumber, length, and width;
+  it also shows an &#x3A9;(&#8730;n) lower bound for the class of n-element planar posets.
+  Notably, <span>gen-ref-HP97</span> observes that a width-w poset has queue number at most w<sup>2</sup>, while planar width-w posets have
+  queue number at most 4w. <span>gen-ref-KMU18</span> improves the upper bound for planar posets to 3w-2 and for general posets to w<sup>2</sup>-w+1.
+  Later <span>gen-ref-ABGKP23</span> reduced the upper bound for general posets to (w-1)<sup>2</sup>+1 and the lower bound to w+1, thus refuting
+  the conjecture of Heath and Pemmaraju that width-w posets always have queue number w. The conjecture has also been refuted for
+  2-dimensional posets (<span>gen-ref-Pup22</span>) and a width-w posets with w<sup>2</sup>/8 queue number has been presented (<span>gen-ref-FUW21</span>).
+  <br/>
+  By analogy with undirected graphs, <b>track numbers of DAGs</b> can be defined and studied; <span>gen-ref-DW06</span> and <span>gen-ref-GLMW09</span>
+  provide several results for track numbers with low-volume three-dimensional upward drawings.
 </p>
 
+<!--h3>
+  <span id="mixed">Mixed layouts</span>
+</h3>
+  TODO
 
-<br/>
+  Mixed Page Number of Planar Directed Acyclic Graphs, Deborah Haun
+
+<h3>
+  <span id="mixed">Stacks vs Queues</span>
+</h3>
+  TODO
+  Relationship for DAGs (HP99, HP97_posets)
+
+<h3>
+  <span id="mixed">Other constraints</span>
+</h3>
+  <h6>Local</h6>
+  <h6>Dispersable</h6>
+  <h6>Forest</h6>
+<br/-->
+
 <h4>
 	<span id="refs">References</span>
 </h4>
@@ -519,16 +554,22 @@ in several previous works studying low-volume three-dimensional graph drawings.
 
   <li id="ref-BGR23">
     M. Bekos, M. Gronemann, C. Raftopoulou. An Improved Upper Bound on the Queue Number of Planar Graphs.
-    Algorithmica, 2023.</li>
+    Algorithmica, 85(2):544-562 ,2023.</li>
   <li id="ref-FKMPR23">
     H. Förster, M. Kaufmann, L. Merker, S. Pupyrev, C. Raftopoulou. Linear Layouts of Bipartite Planar Graphs.
-    Algorithms and Data Structures Symposium (WADS), 2023.</li>
+    Algorithms and Data Structures Symposium (WADS), pp 444-459, 2023.</li>
   <li id="ref-F23">
     F. Brandenburg. Embedding 1-Planar Graphs in Ten Pages.
     arXiv preprint arXiv:2312.15786, 2023.</li>
+  <li id="ref-ABGKP23">
+    J. Alam, M. Bekos, M. Gronemann, M. Kaufmann, S. Pupyrev. Lazy queue layouts of posets.
+    Algorithmica 85(5):1176-1201, 2023.</li>
   <li id="ref-JMU22b">
     P. Jungeblut, L. Merker, and T. Ueckerdt. Directed acyclic outerplanar graphs have constant stack number.
-    Symposium on Foundations of Computer Science, 2023.</li>
+    Symposium on Foundations of Computer Science, pp 1937-1952, 2023.</li>
+  <li id="ref-Pup22">
+    S. Pupyrev. Queue layouts of two-dimensional posets.
+    International Symposium on Graph Drawing, pp 353-360, 2022.</li>
   <li id="ref-JMU22a">
     P. Jungeblut, L. Merker, and T. Ueckerdt. A sublinear bound on the page number of upward planar graphs.
     Symposium on Discrete Algorithms, pp 963-978, 2022.</li>
@@ -540,7 +581,10 @@ in several previous works studying low-volume three-dimensional graph drawings.
     International Symposium on Algorithms and Computation, 2022.</li>
   <li id="ref-NP21">
     M. Nöllenburg and S. Pupyrev. On families of planar DAGs with constant stack number.
-    International Symposium on Graph Drawing, 2023.</li>
+    International Symposium on Graph Drawing, pp 135-151, 2023.</li>
+  <li id="ref-FUW21">
+    S. Felsner, T. Ueckerdt, and K. Wille. On the queue-number of partial orders.
+    International Symposium on Graph Drawing, pp 231-241, 2021.</li>
   <li id="ref-M20">
     L. Merker. Ordered covering numbers.
     Diss. Karlsruhe Institute of Technology, 2020.</li>
@@ -559,13 +603,13 @@ in several previous works studying low-volume three-dimensional graph drawings.
     Journal of Graph Algorithms and Applications, pp 323-341, 2020.</li>
   <li id="ref-DMW20">
     V. Dujmovi&#263;, P. Morin, and D. Wood. Graph product structure for non-minor-closed classes.
-    arXiv preprint arXiv:1907.05168, 2020.</li>
+    Journal of Combinatorial Theory, Series B, 162:34-67, 2023.</li>
   <li id="ref-HK19">
     M. Hoffmann and B. Klemz. Triconnected planar graphs of maximum degree five are subhamiltonian.
     European Symposium on Algorithms (ESA), pp 58, 2019.</li>
   <li id="ref-GY19">
     X. Guan and W. Yang. Embedding planar 5-graphs in three pages.
-    Discrete Applied Mathematics, 2019.</li>
+    Discrete Applied Mathematics, pp 108-121, 2019.</li>
   <li id="ref-DJMMUW19">
     V. Dujmovi&#263;, G. Joret, P. Micek, P. Morin, T. Ueckerdt, D. R. Wood. Planar graphs have bounded queue-number.
     Symposium on Foundations of Computer Science, pp 862-875, 2019</li>
@@ -574,7 +618,10 @@ in several previous works studying low-volume three-dimensional graph drawings.
     arXiv preprint arXiv:1901.05594, 2019.</li>
   <li id="ref-BFGMMRU19">
     M. Bekos, H. Förster, M. Gronemann, T. Mchedlidze, F. Montecchiani, C. Raftopoulou, T. Ueckerdt. Planar graphs of bounded degree have bounded queue number.
-    Symposium on Theory of Computing, 2019.</li>
+    Symposium on Theory of Computing, pp 176-184, 2019.</li>
+  <li id="ref-KMU18">
+    K. Knauer, and P. Micek and T. Ueckerdt. The queue-number of posets of bounded width or height.
+    International Symposium on Graph Drawing, pp 200-212, 2018.</li>
   <li id="ref-DF18">
     V. Dujmovi&#263; and F. Frati. Stack and queue layouts via layered separators.
     Journal of Graph Algorithms and Applications, pp 89-99, 2018.</li>
@@ -600,11 +647,16 @@ in several previous works studying low-volume three-dimensional graph drawings.
     K. Sperfeld. On the page number of complete odd-partite graphs. Discrete Mathematics, 313(17):1689–1996, 2013.</li>
   <li id="ref-VDG09">
     J. Vandenbussche, W. B. Douglas and Y. Gexin. On the pagenumber of k-trees. SIAM Journal on Discrete Mathematics 23.3: 1455-1464, 2009.</li>
+  <li id="ref-GLMW09">
+    E. Di Giacomo, and G. Liotta, H. Meijer, and S. Wismath. Volume requirements of 3D upward drawings.
+    Discrete Mathematics 309(7): 1824-1837, 2009.</li>
   <li id="ref-MS09">
     T. Mchedlidze and A. Symvonis. Crossing-free acyclic Hamiltonian path completion for planar st-digraphs. Algorithms and Computation, pp 882-891, 2009.</li>
   <li id="ref-FLW06">
     S. Felsmer, G. Liotta, and S. Wismath. Straight-line drawings on restricted integer grids in two and three dimensions. 
     Graph Algorithms and Applications 4, 4:363-398, 2006.</li>
+  <li id="ref-DW06">
+    V. Dujmovi&#263; and D. R. Wood. Upward three-dimensional grid drawings of graphs. Order 23(1): 1-20, 2006.</li>
   <li id="ref-DMW05">
     V. Dujmovi&#263;, P. Morin, and D. R. Wood. Layout of graphs with bounded tree-width. SIAM Journal on Computing 34.3: 553-579, 2005.</li>
   <li id="ref-AL05">
@@ -618,7 +670,7 @@ in several previous works studying low-volume three-dimensional graph drawings.
   <li id="ref-GM03">
     E. Di Giacomo and H. Meijer. Track drawings of graphs with constant queue number. In International Symposium on Graph Drawing, pages 214-225. Springer, 2003.</li>
   <li id="ref-GLM03">
-    E. Di Giacomo, G. Liotta, and H. Meijer. 3d straight-line drawings of k-trees. Technical report, 2003-473, School of Computing, Queens's University, Kingston, Canada, 2003.</li>
+    E. Di Giacomo, G. Liotta, and H. Meijer. 3D straight-line drawings of k-trees. Technical report, 2003-473, School of Computing, Queens's University, Kingston, Canada, 2003.</li>
   <li id="ref-W02">
     D. Wood. Queue layouts, tree-width, and three-dimensional graph drawing. In Foundations of Software Technology and Theoretical Computer Science, pages 348-359, Springer, 2002.</li>
   <li id="ref-TY02">
@@ -634,6 +686,8 @@ in several previous works studying low-volume three-dimensional graph drawings.
   <li id="ref-ENO97">
     H. Enomoto, T. Nakamigawa, and K. Ota. On the pagenumber of complete bipartite graphs. Journal of Combinatorial Theory, Series B, 
     pages 71(1):111-120. Elsevier, 1997.</li>
+  <li id="ref-HP97">
+    L. S. Heath, S. V. Pemmaraju. Stack and queue layouts of posets. SIAM Journal on Discrete Mathematics, 10(4):599-625, 1997.</li>
   <li id="ref-G95">
     J. L. Ganley. Stack and queue layouts of Halin graphs. manuscript, 1995.</li>
   <li id="ref-FMP95">
