@@ -538,14 +538,37 @@ in several previous works studying low-volume three-dimensional graph drawings.
   provide several results for track numbers with low-volume three-dimensional upward drawings.
 </p>
 
-<!--h3>
+<h3>
   <span id="mixed">Mixed layouts</span>
 </h3>
-  TODO
 
-  Mixed Page Number of Planar Directed Acyclic Graphs, Deborah Haun
+<p class="text-justify">
+  Stack and queue layouts are generalized in <b>mixed linear layouts</b> in which
+  every edge is assigned to a stack or to a queue that is defined with respect to a common vertex order (<span>gen-ref-HR92</span>).
+  Such a layout is called an s-stack q-queue layout, or an (s,q)-layout , if it utilizes s stacks and q queues. 
+  One reason for studying mixed layouts is that they model the dequeue data structure, as
+  a dequeue may be simulated by two stacks and one queue (<span>gen-ref-DW05</span>, <span>gen-ref-A14</span>).
 
-<h3>
+<br/><br/>
+
+  Heath and Rosenberg <span>gen-ref-HR92</span> suggested to study mixed linear layouts back in 1992;
+  specifically they conjectured that every planar graph admits a mixed 1-stack 1-queue layout.
+  <span>gen-ref-DW05</span>, <span>gen-ref-EM14</span>, and <span>gen-ref-Miy20</span> investigate mixed layouts of graph subdivisions.
+  In particular, <span>gen-ref-DW05</span> shows that four division vertices per edge of a planar graph
+  are sufficient to construct a mixed 1-stack 1-queue. The bound has been improved to one division vertex per edge in <span>gen-ref-P17</span>.
+  In the same work, the conjecture has been disproved by presenting a planar graph (of treewidth 3) that does not admit
+  a (1,1)-layout. Subsequently, other papers have followed strengthening the result by showing that not even 
+  series-parallel (<span>gen-ref-ABKM22</span>) or planar bipartite graphs (<span>gen-ref-FKMPR23</span>) admit a mixed 1-stack 1-queue layout.
+
+<br/><br/>
+
+  Formally, the mixed page number is introduced in <span>gen-ref-ABGKP22</span>, who study layouts of complete and complete bipartite graphs.
+  Further investigations include computational hardness results (<span>gen-ref-CKN19</span>), who show that testing the existence of a 2-stack 1-queue layout is NP-complete. <span>gen-ref-Deb23</span> study mixed layouts of directed acyclic graphs.
+  Very recently, <span>gen-ref-KKPU24</span> related the queue, stack, and mixed page number to each other.
+</p>
+
+
+<!--h3>
   <span id="mixed">Stacks vs Queues</span>
 </h3>
   TODO
@@ -557,6 +580,9 @@ in several previous works studying low-volume three-dimensional graph drawings.
   <h6>Local</h6>
   <h6>Dispersable</h6>
   <h6>Forest</h6>
+
+  <h6>Other</h6>
+  A Note on Mixed Linear Layouts of Planar Graphs. rique+stack/queue for planar
 <br/-->
 
 <h4>
@@ -567,18 +593,24 @@ in several previous works studying low-volume three-dimensional graph drawings.
 <ol class="references">
 	<li id="ref-bob"><a href="http://be.cs.arizona.edu">An online solver for stack and queue numbers of graphs.</a></li>
 
+  <li id="ref-KKPU24">
+    J. Katheder, M. Kaufmann and S. Pupyrev, and T. Ueckerdt. Transforming stacks into queues: Mixed and separated layouts of graphs.
+    arXiv preprint arXiv:2409.17776, 2024.</li>
   <li id="ref-BGR23">
-    M. Bekos, M. Gronemann, C. Raftopoulou. An improved upper bound on the queue number of planar graphs.
-    Algorithmica, 85(2):544-562 ,2023.</li>
+    M. A. Bekos, M. Gronemann, C. Raftopoulou. An improved upper bound on the queue number of planar graphs.
+    Algorithmica, 85(2):544-562, 2023.</li>
   <li id="ref-FKMPR23">
-    H. Förster, M. Kaufmann, L. Merker, S. Pupyrev, C. Raftopoulou. Linear Layouts of Bipartite Planar Graphs.
+    H. Förster, M. Kaufmann, L. Merker, S. Pupyrev, C. Raftopoulou. Linear layouts of bipartite planar graphs.
     Algorithms and Data Structures Symposium (WADS), pp 444-459, 2023.</li>
   <li id="ref-F23">
-    F. Brandenburg. Embedding 1-Planar Graphs in Ten Pages.
+    F. Brandenburg. Embedding 1-planar graphs in ten pages.
     arXiv preprint arXiv:2312.15786, 2023.</li>
   <li id="ref-ABGKP23">
     J. Alam, M. Bekos, M. Gronemann, M. Kaufmann, S. Pupyrev. Lazy queue layouts of posets.
     Algorithmica 85(5):1176-1201, 2023.</li>
+  <li id="ref-Deb23">
+    D. Haun. Mixed page number of planar directed acyclic graphs.
+    BSs thesis, Karlsruhe Institute of Technology, 2023.</li>
   <li id="ref-JMU22b">
     P. Jungeblut, L. Merker, and T. Ueckerdt. Directed acyclic outerplanar graphs have constant stack number.
     Symposium on Foundations of Computer Science, pp 1937-1952, 2023.</li>
@@ -592,8 +624,14 @@ in several previous works studying low-volume three-dimensional graph drawings.
     S. Bhore, G. Da Lozzo, F. Montecchiani, and M. Nöllenburg. On the upward book thickness problem: combinatorial and complexity results.
     European Journal of Combinatorics, 2022.</li>
   <li id="ref-BDHK22">
-    M. A. Bekos, G. Da Lozzo, P. Hliněný, M. Kaufmann. Graph Product Structure for h-Framed Graphs.
+    M. A. Bekos, G. Da Lozzo, P. Hliněný, M. Kaufmann. Graph product structure for h-framed graphs.
     International Symposium on Algorithms and Computation, 2022.</li>
+  <li id="ref-ABGKP22">
+    J. Alam, M. A. Bekos, M. Gronemann, M. Kaufmann and S. Pupyrev. The mixed page number of graphs.
+    Theoretical Computer Science, 2022.</li>
+  <li id="ref-ABKM22">
+    P. Angelini, M.A. Bekos, P. Kindermann, T. Mchedlidze. On mixed linear layouts of series-parallel graphs.
+    Theoretical Computer Science, pp 129–138, 2022.</li>
   <li id="ref-NP21">
     M. Nöllenburg and S. Pupyrev. On families of planar DAGs with constant stack number.
     International Symposium on Graph Drawing, pp 135-151, 2023.</li>
@@ -613,6 +651,9 @@ in several previous works studying low-volume three-dimensional graph drawings.
   <li id="ref-BKKPRU20">
     M. A. Bekos, M. Kaufmann, and F. Klute, S. Pupyrev, C. Raftopoulou, and T. Ueckerdt. Four pages are indeed necessary for planar graphs.
     Journal of Computational Geometry, pp 332-353, 2020.</li>
+  <li id="ref-Miy20">
+    M. Miyauchi. Topological stack-queue mixed layouts of graphs.
+    Transactions on Fundamentals of Electronics, Communications and Computer Sciences, pp 510-522, 2020.</li>
   <li id="ref-P19">
     S. Pupyrev. Improved bounds for track numbers of planar graphs.
     Journal of Graph Algorithms and Applications, pp 323-341, 2020.</li>
@@ -622,6 +663,9 @@ in several previous works studying low-volume three-dimensional graph drawings.
   <li id="ref-HK19">
     M. Hoffmann and B. Klemz. Triconnected planar graphs of maximum degree five are subhamiltonian.
     European Symposium on Algorithms (ESA), pp 58, 2019.</li>
+  <li id="ref-CKN19">
+    P. de Col, F. Klute and M. N{\"o}llenburg. Mixed linear layouts: Complexity, heuristics, and experiments.
+    Graph Drawing and Network Visualization, pp 460-467, 2019.</li>
   <li id="ref-GY19">
     X. Guan and W. Yang. Embedding planar 5-graphs in three pages.
     Discrete Applied Mathematics, pp 108-121, 2019.</li>
@@ -649,6 +693,8 @@ in several previous works studying low-volume three-dimensional graph drawings.
   <li id="ref-BDDEW18">
     M. J. Bannister, W. E. Devanny, V. Dujmovi&#263;, D. Eppstein, D. R. Wood. Track layouts, layered path decompositions, and leveled planarity.
     Algorithmica, pp 1-23, 2018.</li>
+  <li id="ref-P17">
+    S. Pupyrev. Mixed linear layouts of planar graphs. Graph Drawing, pp 197-209, 2017.</li>
   <li id="ref-W17">
     V. Wiechert. On the queue-number of graphs with bounded tree-width. Electr. J. Comb. 24(1), P1.65, 2017.</li>
   <li id="ref-BGR16">
@@ -659,6 +705,10 @@ in several previous works studying low-volume three-dimensional graph drawings.
     V. Dujmovi&#263;. Graph layouts via layered separators. Journal of Combinatorial Theory, Series B, 110:79-89, 2015.</li>
   <li id="ref-BKZ15">    
     M. A. Bekos, M. Kaufmann, and C. Zielke. The book embedding problem from a SAT-solving perspective. International Symposium on Graph Drawing, pp 125-138, 2015.</li>
+  <li id="ref-EM14">
+    H. Enomoto and M. Miyauchi. Stack-queue mixed layouts of graph subdivisions. Forum on Information Technology, pages 47-56, 2014.</li>
+  <li id="ref-A14">
+    C. Auer. Planar graphs and their duals on cylinder surfaces. PhD thesis, Universität Passau, 2014.</li>
   <li id="ref-FFR13">    
     F. Frati, R. Fulek, A.J. Ruiz-Vargas. On the page number of upward planar directed acyclic graphs. Journal of Graph Algorithms and Applications, 17(3):221–244, 2013.</li>
   <li id="ref-SPE13">    
@@ -677,14 +727,17 @@ in several previous works studying low-volume three-dimensional graph drawings.
     V. Dujmovi&#263; and D. R. Wood. Upward three-dimensional grid drawings of graphs. Order 23(1): 1-20, 2006.</li>
   <li id="ref-DMW05">
     V. Dujmovi&#263;, P. Morin, and D. R. Wood. Layout of graphs with bounded tree-width. SIAM Journal on Computing 34.3: 553-579, 2005.</li>
+  <li id="ref-DW05">
+    V. Dujmovi&#263; and D. R. Wood. Stacks, queues and tracks: Layouts of graph subdivisions. 
+    Discrete Mathematics and Theoretical Computer Science 7: 155-202, 2005.</li>
   <li id="ref-AL05">
-    M. Alhashem. The book embeddings of ordered sets. Master thesis, University of Ottawa, 2005.</li>
+    M. Alhashem. The book embeddings of ordered sets. MSc thesis, University of Ottawa, 2005.</li>
   <li id="ref-DPW04">
     V. Dujmovi&#263;, A. P&oacute;r, and D. R. Wood. Track layouts of graphs. Discrete Mathematics & Theoretical Computer Science, 6(2):497-522, 2004.</li>
   <li id="ref-DW04">
     V. Dujmovi&#263; and D. R. Wood. On linear layouts of graphs. Discrete Mathematics & Theoretical Computer Science, 6(2):339-358, 2004.</li>
   <li id="ref-B03">
-    R. Blankenship. Book embeddings of graphs. Ph.D. thesis, Louisiana State University, 2003.</li>
+    R. Blankenship. Book embeddings of graphs. PhD thesis, Louisiana State University, 2003.</li>
   <li id="ref-GM03">
     E. Di Giacomo and H. Meijer. Track drawings of graphs with constant queue number. In International Symposium on Graph Drawing, pages 214-225. Springer, 2003.</li>
   <li id="ref-GLM03">
