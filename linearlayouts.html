@@ -31,7 +31,11 @@
 						var idx = Array.prototype.indexOf.call(parent_element.children, child_element) + 1;
 						divs[i].innerHTML = "<a href='#" + id + "'>[" + idx + "]</a>";
 					}
-				}				
+				}
+        // insert today's date
+        const now = new Date();
+        const datetime = now.toLocaleDateString("en-US");
+        document.getElementById("cite_date").innerHTML = datetime;        
 			};		
 		</script>
 
@@ -816,6 +820,17 @@ in several previous works studying low-volume three-dimensional graph drawings.
 		L. T. Ollmann. On the book thicknesses of various graphs. In 4th Southeastern Conference on Combinatorics. Graph Theory and
 		Computing, vol. VIII of Congressus Numerantium, p. 459, 1973.</li>
 </ol>
+</div>
+
+<h5>Please cite this page with</h5>
+<div class="section">
+<pre class="verbatim">@misc{llsurvey,
+  author       = {Pupyrev, S},
+  title        = {A collection of existing results on stack and queue numbers},
+  howpublished = {\url{https://spupyrev.github.io/linearlayouts.html}},
+  note         = {Accessed: <span id="cite_date">2010-09-30</span>}
+}
+</pre>
 </div>
 
 </main>
