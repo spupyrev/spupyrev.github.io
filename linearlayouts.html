@@ -47,7 +47,7 @@
 <div class="p-1 bg-dark text-white text-center" id="naslov">
       <h1>A collection of existing results on stack and queue numbers</h1>
       <!-- <div>by <a style="font-size: larger; font-weight: bold; color: white; text-decoration: none;" href="https://www.math.auckland.ac.nz/~conder/">Marston Conder</a> and <a style="font-size: larger; font-weight: bold; color: white; text-decoration: none;" href="https://users.fmf.uni-lj.si/potocnik/">Primož Potočnik</a></div> -->
-    <div style="color:rgba(255, 255, 255, 0.8); text-align: right">Last updated: 2024-11-15</div>
+    <div style="color:rgba(255, 255, 255, 0.8); text-align: right">Last updated: 2025-07-09</div>
 </div>
 
 <!--h3 style="text-align:center">
@@ -226,6 +226,20 @@ Stack layouts were introduced by <a href="#ref-O73">Ollmann</a> in 1973.
       <td><span>gen-ref-DF18</span></td>
     </tr>
     <tr>
+      <td>outer 1-planar</td>
+      <td>2</td>
+      <td><span>gen-ref-ABBGHNR16</span></td>
+      <td>2</td>
+      <td><span>gen-ref-ABBGHNR16</span></td>
+    </tr>
+    <tr>
+      <td>outer k-planar</td>
+      <td></td>
+      <td></td>
+      <td>1.5k + 3</td>
+      <td><span>gen-ref-FGKOW24</span> <span>gen-ref-GH01</span></td>
+    </tr>
+    <tr>
       <td>pathwidth k</td>
       <td>k</td>
       <td><span>gen-ref-TY02</span></td>
@@ -379,6 +393,20 @@ queue layout of the graph. Queue layouts were defined by <a href="#ref-HR92">Hea
     <td>O(f(k))</td>
     <td><span>gen-ref-DJMMUW19</span> <span>gen-ref-DMW20</span></td>
   </tr>
+  <tr>
+    <td>outer 1-planar</td>
+    <td>3</td>
+    <td><span>gen-ref-ABBGHNR16</span></td>
+    <td>3</td>
+    <td><span>gen-ref-ABBGHNR16</span></td>
+  </tr>
+  <tr>
+    <td>outer k-planar</td>
+    <td></td>
+    <td></td>
+    <td>2<sup>1.5k+2</sup> - 1</td>
+    <td><span>gen-ref-FGKOW24</span> <span>gen-ref-W17</span></td>
+  </tr>  
   <tr>
     <td>pathwidth k</td>
     <td>k</td>
@@ -624,11 +652,14 @@ in several previous works studying low-volume three-dimensional graph drawings.
 
 <div>
 <ol class="references">
-	<li id="ref-bob"><a href="http://be.cs.arizona.edu">An online solver for stack and queue numbers of graphs.</a></li>
+	<li id="ref-bob"><a href="https://github.com/spupyrev/bob">A SAT-based solver for constructing optimal linear layouts of graphs.</a></li>
 
   <li id="ref-KKPU24">
     J. Katheder, M. Kaufmann and S. Pupyrev, and T. Ueckerdt. Transforming stacks into queues: Mixed and separated layouts of graphs.
     arXiv preprint arXiv:2409.17776, 2024.</li>
+  <li id="ref-FGKOW24">
+    O. Firman, G. Gutowski, M. Kryven, Y. Okada, and A. Wolff. Bounding the treewidth of outer k-planar graphs via triangulations.
+    International Symposium on Graph Drawing, pp 1-17, 2024.</li>
   <li id="ref-BGR23">
     M. A. Bekos, M. Gronemann, C. Raftopoulou. An improved upper bound on the queue number of planar graphs.
     Algorithmica, 85(2):544-562, 2023.</li>
@@ -732,6 +763,8 @@ in several previous works studying low-volume three-dimensional graph drawings.
     V. Wiechert. On the queue-number of graphs with bounded tree-width. Electr. J. Comb. 24(1), P1.65, 2017.</li>
   <li id="ref-BGR16">
     M. A. Bekos, M. Gronemann, and C. N. Raftopoulou. Two-page book embeddings of 4-planar graphs. Algorithmica, 75(1):158-185, 2016.</li>
+  <li id="ref-ABBGHNR16">
+    C. Auer, C. Bachmaier, F. J. Brandenburg, A. Gleißner, K. Hanauer, D. Neuwirth, and J. Reislhuber. Outer 1-planar graphs. Algorithmica, 74(4):1293-1320, 2016.</li>
   <li id="ref-ABK15">
     M. Alam, F. J. Brandenburg, and S. G. Kobourov. On the book thickness of 1-planar graphs. arXiv preprint arXiv:1510.05891, 2015.</li>
   <li id="ref-D15">    
