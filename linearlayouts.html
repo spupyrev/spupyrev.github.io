@@ -610,6 +610,23 @@ in several previous works studying low-volume three-dimensional graph drawings.
   <span id="mixed">Stacks vs Queues</span>
 </h3>
 <p class="text-justify">
+  Some of the most important open problems for linear layouts of graphs ask for the relation between 
+  a graph's queue number and its stack number or mixed number.
+  Already in 1992, Heath, Leighton, and Rosenberg (<span>gen-ref-</span>) asked whether the queue (stack) number of a graph is bounded in terms of
+  its stack (queue) number, and 
+
+  $\qn(G)$ is bounded in terms of $\sn(G)$, that is, whether stacks ``can be transformed into'' queues.
+
+
+  This is equivalent to bipartite $3$-stack graphs having bounded queue number (Dujmovi\'{c} and Wood, 2005).
+  Recently, Alam et al. asked whether $\qn(G)$ is bounded in terms of $\mn(G)$, which we show to also be equivalent to the previous questions.
+
+  We approach the problem by considering \emph{separated} linear layouts of bipartite graphs.
+  In this natural setting all vertices of one part must precede all vertices of the other part.
+  Separated stack and queue numbers coincide, and for fixed vertex orders, graphs with bounded separated stack/queue number can be characterized and efficiently recognized, whereas the separated mixed layouts are more challenging.
+  In this work, we thoroughly investigate the relationship between separated and non-separated, mixed and pure linear layouts.
+
+
   Comparing queues and stacks as mechanisms for laying out graphs.
 
   Relationship for DAGs (HP99, HP97_posets)
