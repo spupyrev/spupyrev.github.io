@@ -665,23 +665,56 @@ in several previous works studying low-volume three-dimensional graph drawings.
   (<span>gen-ref-HP97</span>) establishes several parameterized bounds.
 </p>
 
+<h3>
+  <span id="misc">Extensions</span>
+</h3>
+
+Besides traditional stack/queue layouts, a number of extended variants of linear layouts have been studied. 
+<br/><br/>
+
+<p class="text-justify">
+  <b>Dispersable layouts.</b> Dispersable (a.k.a. matching) book embeddings strengthen stack layouts by requiring that 
+  each page induces a matching. Alam et&nbsp;al. formalize and study dispersable book thickness, disprove the 
+  Bernhart–Kainen conjecture (<span>gen-ref-BK79</span>) already for 3-regular and 4-regular bipartite graphs, and give positive results for 
+  restricted planar bipartite graphs (<span>gen-ref-ABDGKP21</span>).
+</p>
+
+<p class="text-justify">
+  <b>Forest stack number.</b> A further restriction is to require each stack/page to induce a forest (interpolating 
+  between ordinary stack layouts and matching stack layouts). This variant is explored in the thesis “Forest Stack Layouts” 
+  (<span>gen-ref-Sch22</span>). An intriguing (unconfirmed) conjecture is that every graph with stack number s admits
+  a forest stack layout on (s+1) pages.
+</p>
+
+<p class="text-justify">
+  <b>Local stack/queue numbers.</b> Local variants bound how many stacks/queues each edge participates in, rather than 
+  bounding the total number of pages. Merker and Ueckerdt study the local variants and show strong bounds for graphs 
+  of bounded treewidth (<span>gen-ref-MU19</span> <span>gen-ref-MU20</span>). A complementary direction is developed 
+  for complete graphs in <span>gen-ref-FMUV21</span>, 
+  which studies several linear-layout parameters on complete graphs in a unified way.
+</p>
+
+<p class="text-justify">
+  <b>Rique layouts and Priority queues.</b> Beyond stacks and queues, one can impose ordering constraints induced by other data structures. 
+  Rique layouts model a richer data structure and induce the 
+  <i>rique-number</i>. Bekos et&nbsp;al. initiate the study, including characterizations for 1-page cases and bounds 
+  for complete graphs (<span>gen-ref-BFKKKR22</span>). Subsequent work studies the deque/rique numbers for complete and 
+  complete bipartite graphs (<span>gen-ref-BKPR23</span>) and investigates the rique-number on structured classes such 
+  as series-parallel graphs and planar bipartite graphs (<span>gen-ref-AR25</span>). 
+  Mixed stack/queue/rique layouts of planar graphs are studied in <span>gen-ref-KP24</span>.
+  Di&nbsp;Giacomo et&nbsp;al. study linear layouts where edges are assigned to pages subject to priority-queue constraints (<span>gen-ref-DDFUZ25</span>).
+</p>
+
+<p class="text-justify">
+  <b>Defective linear layouts.</b> Defective variants allow a controlled number of forbidden configurations per page 
+  (analogous in spirit to defective colorings). Bekos et&nbsp;al. introduce and study defective linear layouts in 
+  <span>gen-ref-BBGD0PTW25</span>.
+</p>
+
 
 <!--h3>
-  <span id="mixed">Other constraints</span>
+  <span>TODOs</span>
 </h3>
-  <h6>Local</h6>
-  The local queue number of graphs with bounded treewidth.
-  Linear Layouts of Complete Graphs.
-
-  <h6>Dispersable</h6>
-  <h6>Forest</h6>
-  <h6>Defective</h6>
-
-  <h6>Other</h6>
-  A Note on Mixed Linear Layouts of Planar Graphs. rique+stack/queue for planar
-  On the Deque and Rique Numbers of Complete and Complete Bipartite Graphs.
-  Priority-queue layouts.
-
   Page number of monotone DAG outerplanar graphs.
 
   <h6>FPT</h6>
@@ -702,23 +735,43 @@ in several previous works studying low-volume three-dimensional graph drawings.
     Discrete Applied Mathematics, 381:232–236, 2026.</li>
   <li id="ref-HMP25">
     D. Haun, L. Merker, S. Pupyrev.
-    Forbidden Patterns in Mixed Linear Layouts.
+    Forbidden patterns in mixed linear layouts.
     STACS, 45:1–45:21, 2025.</li>
   <li id="ref-KKPU25">
     J. Katheder, M. Kaufmann, S. Pupyrev, and T. Ueckerdt.
     Transforming stacks into queues: Mixed and separated layouts of graphs.
     STACS, LIPIcs 327, 56:1–56:18, 2025.</li>
-  <li id="ref-FGKOW24">
-    O. Firman, G. Gutowski, M. Kryven, Y. Okada, and A. Wolff. Bounding the treewidth of outer k-planar graphs via triangulations.
-    International Symposium on Graph Drawing, pp 1-17, 2024.</li>
+  <li id="ref-BBGD0PTW25">
+    M. A. Bekos, C. Binucci, E. Di Giacomo, W. Didimo, L. Grilli, M. E. Pavlidi, A. Tappini, and A. Weinberger.
+    Defective linear layouts of graphs (Poster Abstract).
+    Graph Drawing and Network Visualization (GD), 49:1–49:4, 2025.</li>    
+  <li id="ref-DDFUZ25">
+    E. Di Giacomo, W. Didimo, H. Förster, T. Ueckerdt, J. Zink.
+    Linear layouts of graphs with priority queues.
+    WADS, 29:1-29:17, 2025.</li>
+  <li id="ref-AR25">
+    S. R. Azgor, Md. S. Rahman.
+    On the rique number of series-parallel graphs and planar bipartite graphs.
+    ICAA, pp 3-14, 2025</li>    
   <li id="ref-GHY25">
     X. Geng, Y. Hao, and X. Yang.
     Queue layouts on folded hypercubes.
     Discrete Applied Mathematics, 373:119–126, 2025.</li>
+  <li id="ref-FGKOW24">
+    O. Firman, G. Gutowski, M. Kryven, Y. Okada, and A. Wolff. Bounding the treewidth of outer k-planar graphs via triangulations.
+    International Symposium on Graph Drawing, pp 1-17, 2024.</li>
   <li id="ref-EHNMSW24">
     D. Eppstein, R. Hickingbotham, L. Merker, S. Norin, M. T. Seweryn, and D. R. Wood.
     Three-dimensional graph products with unbounded stack-number.
     Discrete &amp; Computational Geometry, 71(4):1210–1237, 2024.</li>    
+  <li id="ref-KP24">
+    M. Kaufmann, M. E. Pavlidi.
+    A note on mixed linear layouts of planar graphs.
+    EuroCG, 2024.</li>    
+  <li id="ref-BKPR23">
+    M. A. Bekos, M. Kaufmann, M. E. Pavlidi, and X. Rieger.
+    On the deque and rique numbers of complete and complete bipartite graphs.
+    CCCG, pp 89-95, 2023.</li>    
   <li id="ref-BGR23">
     M. A. Bekos, M. Gronemann, C. Raftopoulou. An improved upper bound on the queue number of planar graphs.
     Algorithmica, 85(2):544-562, 2023.</li>
@@ -742,6 +795,14 @@ in several previous works studying low-volume three-dimensional graph drawings.
     P. Hliněný and A. Straka.
     Stack and queue numbers of graphs revisited.
     European Conference on Combinatorics, Graph Theory and Applications (EUROCOMB), pp 601–606, 2023.</li>    
+  <li id="ref-BFKKKR22">
+    M. A. Bekos, S. Felsner, P. Kindermann, S. G. Kobourov, J. Kratochvíl, and I. Rutter.
+    The rique-number of graphs.
+    Graph Drawing and Network Visualization (GD), pp 371-386, 2022.</li>
+  <li id="ref-Sch22">
+    L. Scherzer.
+    Forest Stack Layouts.
+    Bachelor’s thesis, Karlsruhe Institute of Technology, 2022.</li>    
   <li id="ref-DEHMW22">
     V. Dujmović, D. Eppstein, R. Hickingbotham, P. Morin, and D. R. Wood.
     Stack-number is not bounded by queue-number.
@@ -767,12 +828,24 @@ in several previous works studying low-volume three-dimensional graph drawings.
   <li id="ref-ABKM22">
     P. Angelini, M.A. Bekos, P. Kindermann, T. Mchedlidze. On mixed linear layouts of series-parallel graphs.
     Theoretical Computer Science, pp 129–138, 2022.</li>
+  <li id="ref-ABDGKP21">
+    M. J. Alam, M. A. Bekos, V. Dujmović, M. Gronemann, M. Kaufmann, and S. Pupyrev.
+    On dispersable book embeddings.
+    Theoretical Computer Science, 861:1–22, 2021.</li>    
   <li id="ref-NP21">
     M. Nöllenburg and S. Pupyrev. On families of planar DAGs with constant stack number.
     International Symposium on Graph Drawing, pp 135-151, 2023.</li>
   <li id="ref-FUW21">
     S. Felsner, T. Ueckerdt, and K. Wille. On the queue-number of partial orders.
     International Symposium on Graph Drawing, pp 231-241, 2021.</li>
+  <li id="ref-FMUV21">
+    S. Felsner, L. Merker, T. Ueckerdt, P. Valtr. 
+    Linear layouts of complete graphs.
+    International Symposium on Graph Drawing, pp 257-270, 2021.</li>
+  <li id="ref-MU20">
+    L. Merker and T. Ueckerdt.
+    The local queue number of graphs with bounded treewidth.
+    Graph Drawing and Network Visualization (GD), pp 26–39, 2020.</li>  
   <li id="ref-M20">
     L. Merker. Ordered covering numbers.
     Diss. Karlsruhe Institute of Technology, 2020.</li>
@@ -789,6 +862,10 @@ in several previous works studying low-volume three-dimensional graph drawings.
   <li id="ref-Miy20">
     M. Miyauchi. Topological stack-queue mixed layouts of graphs.
     Transactions on Fundamentals of Electronics, Communications and Computer Sciences, pp 510-522, 2020.</li>
+  <li id="ref-MU19">
+    L. Merker and T. Ueckerdt.
+    Local and union page numbers.
+    Graph Drawing and Network Visualization (GD), pp 447–459, 2019.</li>
   <li id="ref-P19">
     S. Pupyrev. Improved bounds for track numbers of planar graphs.
     Journal of Graph Algorithms and Applications, pp 323-341, 2020.</li>
