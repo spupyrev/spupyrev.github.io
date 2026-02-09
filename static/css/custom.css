@@ -5,94 +5,128 @@ body {
 } 
 */
 
-.img-about {
-    max-height: 191px;
-    border-radius: 50%;
+.img-about{
+  max-height: 191px;
+  border-radius: 50%;
+  /* optional robustness (uncomment if you want guaranteed circle)
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  */
 }
 
-.table .thead-dark th {
-    background-color: #4CAF50;
-    color: white;
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-}
-.table-fancy th:first-child {text-align: left;}
-.table-fancy td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-}
-.table-fancy td:first-child {text-align: left;}
-.table-fancy tr:nth-child(odd){background-color: #f2f2f2;}
-.table-fancy tr:hover {background-color: #ddd;}
-
-.borderless td, .borderless th {
-    border: none;
+/* Tables */
+.table .thead-dark th{
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
 }
 
-h1,h2,h3,h4,h5,h6 {
-  padding-top:0.5em;
-  border-bottom:1px solid #a2a9b1;
+/* Optional: ensure header cells are consistently styled even without .thead-dark */
+/*
+.table thead th{
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+*/
+
+.table-fancy th:first-child{ text-align: left; }
+.table-fancy td{
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+.table-fancy td:first-child{ text-align: left; }
+.table-fancy tr:nth-child(odd){ background-color: #f2f2f2; }
+.table-fancy tr:hover{ background-color: #ddd; }
+
+.borderless td, .borderless th{ border: none; }
+
+/* Headings */
+h1,h2,h3,h4,h5,h6{
+  padding-top: 0.5em;
+  border-bottom: 1px solid #a2a9b1;
 }
 
-ol {margin-left:0; padding-left:0; counter-reset:item}
-ol>li {margin-left:0; padding-left:0; counter-increment:item; list-style:none inside}
-ol>li:before {content:"[" counter(item) "]"; padding-right:0.5em}
+/* Custom ordered list numbering */
+ol{ margin-left: 0; padding-left: 0; counter-reset: item; }
+ol>li{ margin-left: 0; padding-left: 0; counter-increment: item; list-style: none inside; }
+ol>li:before{ content: "[" counter(item) "]"; padding-right: 0.5em; }
 
-:target {
-    -webkit-animation: target-fade 3s;
-    -moz-animation: target-fade 3s;
-    -o-animation: target-fade 3s;
-    animation: target-fade 3s;
-}
-
-@-webkit-keyframes target-fade {
-	from { background-color: gray; } /* [1] */
-	to { background-color: transparent; }
+/* Target highlight (limit to headings to avoid odd flashes elsewhere) */
+h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{
+  -webkit-animation: target-fade 3s;
+  animation: target-fade 3s;
 }
 
-@-moz-keyframes target-fade {
-	from { background-color: gray; } /* [1] */
-	to { background-color: transparent; }
+@-webkit-keyframes target-fade{
+  from{ background-color: gray; }
+  to{ background-color: transparent; }
 }
 
-@-o-keyframes target-fade {
-	from { background-color: gray; } /* [1] */
-	to { background-color: transparent; }
+@keyframes target-fade{
+  from{ background-color: gray; }
+  to{ background-color: transparent; }
 }
 
-@keyframes target-fade {
-	from { background-color: gray; } /* [1] */
-	to { background-color: transparent; }
+/* Figures (global) */
+figure{
+  display: block;          /* better than inline-block for layout */
+  margin: 20px auto;       /* keeps spacing and centers */
+  text-align: center;
+}
+figure img{
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+figure figcaption{
+  text-align: center;
 }
 
-figure {
-    display: inline-block;
-    margin: 20px; /* adjust as needed */
-}
-figure img {
-    vertical-align: top;
-}
-figure figcaption {
-    text-align: center;
-}
+/* Misc */
+.span-date{ color: #777777; }
 
-.span-date {
-  color: #777777;
-}
-
-.field {
+.field{
   color: #1a0dab;
   margin-right: 16px;
 }
 
-.noselect {
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
+.noselect{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Two-figure layout */
+.figures-2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  align-items: end; /* bottom-align figures so captions align */
+}
+
+.figures-2 figure{
+  margin: 0;               /* override global figure margin */
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.img-95{
+  width: 95%;
+  margin: 0 auto;
+}
+
+.img-100{
+  width: 100%;
+}
+
+@media (max-width: 800px){
+  .figures-2{ grid-template-columns: 1fr; }
 }

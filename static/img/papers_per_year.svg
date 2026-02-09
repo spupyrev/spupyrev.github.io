@@ -1,0 +1,48 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='900' height='420' viewBox='0 0 900 420'>
+  <rect x='0' y='0' width='900' height='420' fill='white'/>
+  <text x='40' y='30' font-family='sans-serif' font-size='18'></text>
+  <line x1='40' y1='380' x2='860' y2='380' stroke='black' stroke-width='1'/>
+  <line x1='40' y1='40' x2='40' y2='380' stroke='black' stroke-width='1'/>
+  <text x='15' y='210.0' font-family='sans-serif' font-size='16' text-anchor='middle' fill='#555' transform='rotate(-90 15 210.0)'>Number of papers</text>
+  <text x='30' y='385' font-family='sans-serif' font-size='14' text-anchor='end'>0</text>
+  <text x='30' y='50' font-family='sans-serif' font-size='14' text-anchor='end'>15</text>
+  <rect x='40' y='277' width='57' height='103' fill='#4c78a8'/>
+  <text x='68.5' y='273' font-family='sans-serif' font-size='14' text-anchor='middle'>5</text>
+  <text x='68.5' y='398' font-family='sans-serif' font-size='13' text-anchor='middle'>≤1989</text>
+  <rect x='103' y='112' width='57' height='268' fill='#4c78a8'/>
+  <text x='131.5' y='108' font-family='sans-serif' font-size='14' text-anchor='middle'>13</text>
+  <text x='131.5' y='412' font-family='sans-serif' font-size='13' text-anchor='middle'>1990–1999</text>
+  <rect x='166' y='215' width='57' height='165' fill='#4c78a8'/>
+  <text x='194.5' y='211' font-family='sans-serif' font-size='14' text-anchor='middle'>8</text>
+  <text x='194.5' y='398' font-family='sans-serif' font-size='13' text-anchor='middle'>2000–2004</text>
+  <rect x='229' y='215' width='57' height='165' fill='#4c78a8'/>
+  <text x='257.5' y='211' font-family='sans-serif' font-size='14' text-anchor='middle'>8</text>
+  <text x='257.5' y='412' font-family='sans-serif' font-size='13' text-anchor='middle'>2005–2009</text>
+  <rect x='292' y='256' width='57' height='124' fill='#4c78a8'/>
+  <text x='320.5' y='252' font-family='sans-serif' font-size='14' text-anchor='middle'>6</text>
+  <text x='320.5' y='398' font-family='sans-serif' font-size='13' text-anchor='middle'>2010–2014</text>
+  <rect x='355' y='236' width='57' height='144' fill='#4c78a8'/>
+  <text x='383.5' y='232' font-family='sans-serif' font-size='14' text-anchor='middle'>7</text>
+  <text x='383.5' y='412' font-family='sans-serif' font-size='13' text-anchor='middle'>2015–2017</text>
+  <rect x='418' y='153' width='57' height='227' fill='#4c78a8'/>
+  <text x='446.5' y='149' font-family='sans-serif' font-size='14' text-anchor='middle'>11</text>
+  <text x='446.5' y='398' font-family='sans-serif' font-size='13' text-anchor='middle'>2018–2019</text>
+  <rect x='481' y='153' width='57' height='227' fill='#4c78a8'/>
+  <text x='509.5' y='149' font-family='sans-serif' font-size='14' text-anchor='middle'>11</text>
+  <text x='509.5' y='412' font-family='sans-serif' font-size='13' text-anchor='middle'>2020–2021</text>
+  <rect x='544' y='194' width='57' height='186' fill='#4c78a8'/>
+  <text x='572.5' y='190' font-family='sans-serif' font-size='14' text-anchor='middle'>9</text>
+  <text x='572.5' y='398' font-family='sans-serif' font-size='13' text-anchor='middle'>2022</text>
+  <rect x='607' y='153' width='57' height='227' fill='#4c78a8'/>
+  <text x='635.5' y='149' font-family='sans-serif' font-size='14' text-anchor='middle'>11</text>
+  <text x='635.5' y='412' font-family='sans-serif' font-size='13' text-anchor='middle'>2023</text>
+  <rect x='670' y='318' width='57' height='62' fill='#4c78a8'/>
+  <text x='698.5' y='314' font-family='sans-serif' font-size='14' text-anchor='middle'>3</text>
+  <text x='698.5' y='398' font-family='sans-serif' font-size='13' text-anchor='middle'>2024</text>
+  <rect x='733' y='236' width='57' height='144' fill='#4c78a8'/>
+  <text x='761.5' y='232' font-family='sans-serif' font-size='14' text-anchor='middle'>7</text>
+  <text x='761.5' y='412' font-family='sans-serif' font-size='13' text-anchor='middle'>2025</text>
+  <rect x='796' y='360' width='57' height='20' fill='#4c78a8'/>
+  <text x='824.5' y='356' font-family='sans-serif' font-size='14' text-anchor='middle'>1</text>
+  <text x='824.5' y='398' font-family='sans-serif' font-size='13' text-anchor='middle'>2026</text>
+</svg>
