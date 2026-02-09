@@ -53,9 +53,10 @@ In a total order of the vertices of a graph, two edges with no endpoint in commo
 A k-stack (respectively, k-queue) layout of a graph consists of a total order of the vertices, and a partition of
 the edges into k sets of pairwise non-crossing (respectively, non-nested) edges. Motivated by 
 <a href="#ref-DW04">numerous applications</a>, stack layouts (also called book embeddings) and queue layouts are widely studied in the literature. 
-We survey existing results regarding upper and lower bounds on <a href="#stack">stack number</a>, <a href="#queue">queue number</a> and <a href="#track">track number</a>
+We survey existing results regarding upper and lower bounds on <a href="#stack">stack number</a> and <a href="#queue">queue number</a> 
 of various classes of graphs. 
 </p>
+
 
 <!--figure>
 	<img src="static/img/octo.png" width="95%"/>
@@ -459,7 +460,7 @@ queue layout of the graph. Queue layouts were defined by <a href="#ref-HR92">Hea
 </tbody>
 </table>
 
-<h3>
+<!--h3>
 	<span id="track">Track number</span>
 </h3>
 
@@ -553,47 +554,39 @@ in several previous works studying low-volume three-dimensional graph drawings.
 		<td><span>gen-ref-W17</span></td>
 	</tr>
   </tbody>
-</table>
+</table-->
 
 <h3>
-  <span id="directed">Directed graphs</span>
+  <span id="track">Track layouts</span>
 </h3>
 
 <p class="text-justify">
-  Stack and queue layouts can be extended to directed acyclic graphs (DAGs) by requiring that the vertex order is a topological 
-  order of the DAG. It was first discussed by <a href="#ref-HPT99">Heath et al</a>. Similar layouts are studied for
-  posets (partially ordered sets), or equivalently, DAGs without transitive edges.
-  <br/><br/>
-  For <b>stack layouts of DAGs</b>, <span>gen-ref-HPT99</span> and <span>gen-ref-HP99</span> show that directed trees and unicyclic 
-  DAGs have stack numbers 1 and 2, respectively; 
-  <span>gen-ref-MS09</span> proves that N-free upward planar DAGs, which contain series-parallel digraphs, have
-  stack number 2. 
-  <span>gen-ref-AL05</span> investigate stack layouts of bipartite and complete multipartite ordered sets.
-  A study in <span>gen-ref-FFR13</span> gave several conditions under which upward planar
-  triangulations have a constant stack number: (i) maximal
-  upward planar 3-trees and (ii) planar triangulations with a bounded (directed) diameter. 
-  Later <span>gen-ref-NP21</span> and <span>gen-ref-BLMN22</span> extend the classes of DAGs that have bounded stack number.
-  A sub-linear bound on the stack number of upward planar graphs is known (<span>gen-ref-JMU22a</span>) and a (very large)
-  constant upper bound on the stack number of (non-upward) outerplanar DAGs (<span>gen-ref-JMU22b</span> <span>gen-ref-ABGK25</span>).
-  For the lower bounds, there exist upward outerplanar DAGs with stack number 4, upward planar 3-tree DAGs and 
-  planar posets with stack number 5 (<span>gen-ref-NP21</span>, <span>gen-ref-JMU22a</span>), and
-  (non-upward) 2-tree DAGs with unbounded stack number (<span>gen-ref-JMU22b</span>).
+  Track layouts are closely related to queue layouts; 
+  they were introduced by <a href="#ref-DPW04">Dujmovi&#263; et al.</a>, although similar structures are implicit
+  in several previous works studying low-volume three-dimensional graph drawings.
+  A track layout of a graph is a partition of its vertices into sequences, called tracks, such
+  that the vertices in each sequence form an independent set and the edges between each
+  two pairs of tracks form a non-crossing set.
+</p>
 
-  <br/><br/>
-  <b>Queue layouts of DAGs</b> have been first studied by Heath and Pemmaraju (<span>gen-ref-HP99</span>, <span>gen-ref-HPT99</span>).
-  They characterize 1-queue DAGs as the ones admitting arched leveled-planar layouts, show that every unicyclic DAG has a 2-queue layout,
-  and consider the computational complexity of recognizing 1-queue DAGs (linear time) and 4-queue DAGs (NP-complete).
-  It is easy to verify that the queue number of directed acyclic 2-trees is unbounded (img).
-  Subsequent works focus on the queue number of posets. <span>gen-ref-HP97</span> derives upper bounds in terms of its jumpnumber, length, and width;
-  it also shows an &#x3A9;(&#8730;n) lower bound for the class of n-element planar posets.
-  Notably, <span>gen-ref-HP97</span> observes that a width-w poset has queue number at most w<sup>2</sup>, while planar width-w posets have
-  queue number at most 4w. <span>gen-ref-KMU18</span> improves the upper bound for planar posets to 3w-2 and for general posets to w<sup>2</sup>-w+1.
-  Later <span>gen-ref-ABGKP23</span> reduced the upper bound for general posets to (w-1)<sup>2</sup>+1 and the lower bound to w+1, thus refuting
-  the conjecture of Heath and Pemmaraju that width-w posets always have queue number w. The conjecture has also been refuted for
-  2-dimensional posets (<span>gen-ref-Pup22</span>) and a width-w posets with w<sup>2</sup>/8 queue number has been presented (<span>gen-ref-FUW21</span>).
-  <br/>
-  By analogy with undirected graphs, <b>track numbers of DAGs</b> can be defined and studied; <span>gen-ref-DW06</span> and <span>gen-ref-GLMW09</span>
-  provide several results for track numbers with low-volume three-dimensional upward drawings.
+<p class="text-justify">
+  The track number is exactly determined for several basic classes.
+  Trees have track number 3 (<span>gen-ref-FLW06</span>).
+  Outerplanar graphs have track number 5 (see <a href="static/graphs/outerplanar_5tracks.jpg" target="_blank">[img]</a> and <span>gen-ref-DPW04</span>).
+  Outerplanar bipartite graphs have track number 3 (see <a href="static/graphs/bipartite_outerplanar_3tracks.jpg" target="_blank">[img]</a>, <span>gen-ref-FLW06</span>, <span>gen-ref-BDDEW18</span>).
+  For Halin graphs, the track number is between 5 and 6 (lower bound witnessed by <a href="static/graphs/halin_5tracks.jpg" target="_blank">[img]</a>; upper bound in <span>gen-ref-BDDEW18</span>).
+  For X-trees, the track number is exactly 5 (see <a href="static/graphs/xtree_5tracks.jpg" target="_blank">[img]</a> and <span>gen-ref-P19</span>).
+</p>
+
+<p class="text-justify">
+  For more complex planar families, current bounds are as follows.
+  Series-parallel graphs have track number at least 7 (<span>gen-ref-DMW05</span>, <span>gen-ref-M20</span>) and at most 15 (<span>gen-ref-GLM03</span>).
+  Planar 3-trees have track number between 8 and 25 (<span>gen-ref-P19</span>).
+  Planar graphs have track number between 8 and 225 (<span>gen-ref-P19</span>).
+  Planar bipartite graphs have track number at least 5 (witnessed by <a href="static/graphs/planar_bipartite_5tracks.dot" target="_blank">[dot]</a>) and at most 225 (<span>gen-ref-P19</span>).
+  For graphs of treewidth <i>k</i>, the track number is at least
+  1 &frasl; 2 (k + 1)(k + 2) + 1 (<span>gen-ref-DMW05</span>, <span>gen-ref-M20</span>) and at most
+  (k + 1)(2<sup>k+1</sup>-2)<sup>k</sup> (<span>gen-ref-W17</span>).
 </p>
 
 <h3>
@@ -674,11 +667,53 @@ in several previous works studying low-volume three-dimensional graph drawings.
 </p>
 
 <h3>
+  <span id="directed">Directed graphs</span>
+</h3>
+
+<p class="text-justify">
+  Stack and queue layouts can be extended to directed acyclic graphs (DAGs) by requiring that the vertex order is a topological 
+  order of the DAG. It was first discussed by <a href="#ref-HPT99">Heath et al</a>. Similar layouts are studied for
+  posets (partially ordered sets), or equivalently, DAGs without transitive edges.
+  <br/><br/>
+  For <b>stack layouts of DAGs</b>, <span>gen-ref-HPT99</span> and <span>gen-ref-HP99</span> show that directed trees and unicyclic 
+  DAGs have stack numbers 1 and 2, respectively; 
+  <span>gen-ref-MS09</span> proves that N-free upward planar DAGs, which contain series-parallel digraphs, have
+  stack number 2. 
+  <span>gen-ref-AL05</span> investigate stack layouts of bipartite and complete multipartite ordered sets.
+  A study in <span>gen-ref-FFR13</span> gave several conditions under which upward planar
+  triangulations have a constant stack number: (i) maximal
+  upward planar 3-trees and (ii) planar triangulations with a bounded (directed) diameter. 
+  Later <span>gen-ref-NP21</span> and <span>gen-ref-BLMN22</span> extend the classes of DAGs that have bounded stack number.
+  A sub-linear bound on the stack number of upward planar graphs is known (<span>gen-ref-JMU22a</span>) and a (very large)
+  constant upper bound on the stack number of (non-upward) outerplanar DAGs (<span>gen-ref-JMU22b</span> <span>gen-ref-ABGK25</span>).
+  For the lower bounds, there exist upward outerplanar DAGs with stack number 4, upward planar 3-tree DAGs and 
+  planar posets with stack number 5 (<span>gen-ref-NP21</span>, <span>gen-ref-JMU22a</span>), and
+  (non-upward) 2-tree DAGs with unbounded stack number (<span>gen-ref-JMU22b</span>).
+
+  <br/><br/>
+  <b>Queue layouts of DAGs</b> have been first studied by Heath and Pemmaraju (<span>gen-ref-HP99</span>, <span>gen-ref-HPT99</span>).
+  They characterize 1-queue DAGs as the ones admitting arched leveled-planar layouts, show that every unicyclic DAG has a 2-queue layout,
+  and consider the computational complexity of recognizing 1-queue DAGs (linear time) and 4-queue DAGs (NP-complete).
+  It is easy to verify that the queue number of directed acyclic 2-trees is unbounded (img).
+  Subsequent works focus on the queue number of posets. <span>gen-ref-HP97</span> derives upper bounds in terms of its jumpnumber, length, and width;
+  it also shows an &#x3A9;(&#8730;n) lower bound for the class of n-element planar posets.
+  Notably, <span>gen-ref-HP97</span> observes that a width-w poset has queue number at most w<sup>2</sup>, while planar width-w posets have
+  queue number at most 4w. <span>gen-ref-KMU18</span> improves the upper bound for planar posets to 3w-2 and for general posets to w<sup>2</sup>-w+1.
+  Later <span>gen-ref-ABGKP23</span> reduced the upper bound for general posets to (w-1)<sup>2</sup>+1 and the lower bound to w+1, thus refuting
+  the conjecture of Heath and Pemmaraju that width-w posets always have queue number w. The conjecture has also been refuted for
+  2-dimensional posets (<span>gen-ref-Pup22</span>) and a width-w posets with w<sup>2</sup>/8 queue number has been presented (<span>gen-ref-FUW21</span>).
+  <br/>
+  By analogy with undirected graphs, <b>track numbers of DAGs</b> can be defined and studied; <span>gen-ref-DW06</span> and <span>gen-ref-GLMW09</span>
+  provide several results for track numbers with low-volume three-dimensional upward drawings.
+</p>
+
+<h3>
   <span id="misc">Extensions</span>
 </h3>
 
-Besides traditional stack/queue layouts, a number of extended variants of linear layouts have been studied. 
-<br/><br/>
+<p class="text-justify">
+  Besides traditional stack/queue layouts, a number of extended variants of linear layouts have been studied. 
+</p>
 
 <p class="text-justify">
   <b>Dispersable layouts.</b> Dispersable (a.k.a. matching) book embeddings strengthen stack layouts by requiring that 
